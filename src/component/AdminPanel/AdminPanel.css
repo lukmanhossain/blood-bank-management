@@ -1,0 +1,62 @@
+.head-line{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    align-items: center;
+}
+
+.log-out-btn{
+    border: none;
+    font-size: 14px;
+    background-color: red;
+    margin-right: 25px;
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.love{
+    color: aliceblue;
+    font-size: 19px;
+    padding: 0px 8px;
+}
+
+.blood-heading{
+    color: white;
+    font-size: 15px;
+    font-family: serif;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding-left: 7px;
+    padding-top: 10px;
+}
+
+.dashbord-fild{
+    margin-left: 0px;
+
+}
+.dashbord-list{
+    background-color: #353A40;
+    height: 500px;
+    padding-top: 17px;
+}
+
+.list-item{
+    list-style: none;
+    color: #BEBCD2;
+    padding: 13px 0px;
+    border-bottom: 1px solid #ffffff1f;
+    font-family: serif;
+    text-align: start;
+}
+
+.list-icon{
+    margin-right: 6px;
+    font-size: 16px; 
+}
+
+.link-style{
+    text-decoration: none;
+
+}
