@@ -64,7 +64,7 @@ const UserDonateBlood = () => {
           />
 
           <button className="btn btn-danger mt-5" type="submit">
-            Donate Blood
+            Donate Blood <i class="fas fa-tint"></i>
           </button>
         </form>
       </div>
