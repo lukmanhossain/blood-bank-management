@@ -11,7 +11,7 @@ const UserDashboard = () => {
   let { path, url } = useRouteMatch();
   return (
     <div className="mx-3 mt-5">
-      {/* Admin panel Heding start */}
+      {/* User Dashboard Heding start */}
       <div className=" head-line">
         <p className="blood-heading">
           {" "}
@@ -21,7 +21,7 @@ const UserDashboard = () => {
           Logout <i class="fas fa-sign-out-alt"></i>
         </button>
       </div>
-      {/* Admin panel Heding end */}
+      {/* User Dashboard Heding end */}
       <div className="row dashbord-fild ">
         <div className="col-lg-2 col-sm-12 dashbord-list">
           <div>
@@ -32,12 +32,12 @@ const UserDashboard = () => {
             </Link>
             <Link className="link-style" to={`${url}/donateBlood`}>
               <li className="list-item">
-                <i class="fas fa-user-alt list-icon"></i>Donate Blood
+                <i class="fas fa-hand-holding-medical"></i> Donate Blood
               </li>
             </Link>
             <Link className="link-style" to={`${url}/donationHistory`}>
               <li className="list-item">
-                <i class="fas fa-user-injured list-icon"></i>Donation History
+                <i class="fas fa-history"></i> Donation History
               </li>
             </Link>
 
