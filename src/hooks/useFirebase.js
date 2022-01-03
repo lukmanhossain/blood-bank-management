@@ -1,11 +1,9 @@
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState} from "react";
+import initializeFirebase from "../component/Login/Firebase/firebase.init";
 
-import { useState, useEffect } from "react";
-import initializeAuthentication from "../component/Login/Firebase/firebase.init";
 
-// import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
-
-initializeAuthentication();
+initializeFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
@@ -24,8 +22,6 @@ const useFirebase = () => {
             setAuthError('');
             const newUser = { displayName: name, email };
                 setUser(newUser);
-
-                // saveUser(email, name, 'POST');
 
 
           // Update Profile
@@ -62,7 +58,6 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                // saveUser(user.email, user.displayName, 'PUT')
                 setAuthError('');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);

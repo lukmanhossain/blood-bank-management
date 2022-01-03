@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
 import Login from "./component/Login/Login/Login";
 import Register from "./component/Login/Register/Register";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 
 function App() {
   return (
     <div>
-      <Router>
+      <AuthProvider>
+        <Router>
         <div className="App">
           <Switch>
             <Route path="/adminPanel">
@@ -25,6 +27,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      </AuthProvider>
     </div>
   );
 }
