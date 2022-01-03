@@ -24,21 +24,8 @@ const UserDonateBlood = () => {
     <div className="donate-blood-form-container ">
       <h2 className="m-3">Donate Blood Save Life !</h2>
       <div className="donate-blood-form">
-        <h5 className="mb-5">Please Give your details to donate blood</h5>
+        <h5 className="mb-5">Please give your details to donate blood</h5>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <select {...register("bloodGroup")}>
-            <option value="" disabled selected hidden>
-              Select Your Blood Group
-            </option>
-            <option value="female">A+</option>
-            <option value="other">B+</option>
-            <option value="female">O+</option>
-            <option value="other">AB+</option>
-            <option value="male">A-</option>
-            <option value="female">B-</option>
-            <option value="male">O-</option>
-            <option value="other">AB-</option>
-          </select>
           <input
             placeholder="Your Name"
             {...register("name", { required: true, maxLength: 20 })}
@@ -49,6 +36,29 @@ const UserDonateBlood = () => {
             type="number"
             {...register("age", { min: 18, max: 99 })}
           />
+          <select {...register("gender")}>
+            <option value="" disabled selected hidden>
+              Gender
+            </option>
+            <option defaultValue="male">Male</option>
+            <option defaultValue="female">Female</option>
+            <option defaultValue="other">Other</option>
+          </select>
+
+          <select {...register("bloodGroup")}>
+            <option defaultValue="" disabled selected hidden>
+              Select Your Blood Group
+            </option>
+            <option defaultValue="a+">A+</option>
+            <option defaultValue="b+">B+</option>
+            <option defaultValue="o+">O+</option>
+            <option defaultValue="ab+">AB+</option>
+            <option defaultValue="a-">A-</option>
+            <option defaultValue="b-">B-</option>
+            <option defaultValue="o-">O-</option>
+            <option defaultValue="ab-">AB-</option>
+          </select>
+
           <input
             placeholder="Disease (if any, oterwise type 'no')"
             {...register("disease", { required: false, maxLength: 20 })}
