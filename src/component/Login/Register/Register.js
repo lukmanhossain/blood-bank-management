@@ -99,7 +99,7 @@ const Register = () => {
               Your Registration Created Successfully
             </Alert>
           )}
-          {authError && <Alert severity="error">{authError}</Alert>}}
+          {authError && <Alert severity="error">{authError}</Alert>}
         </Grid>
         <Grid item xs={12} md={6}>
           <img
