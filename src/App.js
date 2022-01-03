@@ -12,6 +12,7 @@ function App() {
     <div>
       <AuthProvider>
         <Router>
+<<<<<<< HEAD
         <div className="App">
           <Switch>
             <Route path="/adminPanel">
@@ -38,6 +39,25 @@ function App() {
           </Switch>
         </div>
       </Router>
+=======
+          <div className="App">
+            <Switch>
+              <Route path="/adminPanel">
+                <AdminPanel></AdminPanel>
+              </Route>
+              <Route path="/userDashboard">
+                <UserDashboard></UserDashboard>
+              </Route>
+              <Route path="/login">
+                <Login></Login>
+              </Route>
+              <Route path="/register">
+                <Register></Register>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+>>>>>>> 19929197d442c8c1d722e6a5f41e39115e81e24d
       </AuthProvider>
     </div>
   );
