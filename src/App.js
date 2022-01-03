@@ -8,7 +8,7 @@ import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 function App() {
   return (
     <div>
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Router>
         <div className="App">
           <Switch>
@@ -18,16 +18,16 @@ function App() {
             <Route path="/userDashboard">
               <UserDashboard></UserDashboard>
             </Route>
-            <Route path="/login">
+            {/* <Route path="/login">
               <Login></Login>
             </Route>
             <Route path="/register">
               <Register></Register>
-            </Route>
+            </Route> */}
           </Switch>
         </div>
       </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }
