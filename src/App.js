@@ -1,27 +1,46 @@
-import AdminPanel from "./component/AdminPanel/AdminPanel";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-
 } from "react-router-dom";
-import Home from "./component/Home/Home";
+import AdminPanel from "./component/AdminPanel/AdminPanel";
+import ContactUs from "./component/ContactUs/ContactUs";
+import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
+import Login from "./component/Login/Login/Login";
+import Register from "./component/Login/Register/Register";
+import Footer from "./component/Shared/Footer/Footer";
+import NavBar from "./component/Shared/NavBar/NavBar";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 
 function App() {
   return (
     <div>
-      {/* <Router>
-     <div className="App">
-       <Switch>
-        
-       <Route path="/adminPanel">
-            <AdminPanel></AdminPanel>
-        </Route>
-       </Switch>
-     </div>
-   </Router>
-     */}
-      <Home></Home>
+      <AuthProvider>
+      <Router>
+      <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <HomeMain />
+            </Route>
+            <Route path="/home">
+              <HomeMain />
+            </Route>
+            <Route path="/adminpanel">
+              <AdminPanel />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/contact-us">
+              <ContactUs />
+            </Route>
+          </Switch>
+          <Footer/>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

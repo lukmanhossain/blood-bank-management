@@ -4,7 +4,7 @@ import BloodRequests from '../BloodRequests/BloodRequests';
 import BloodStocks from '../BloodStocks/BloodStocks';
 import Donation from '../Donation/Donation';
 import Donor from '../Donor/Donor';
-import Home from '../Home/Home';
+import Home from '../AdminHome/AdminHome';
 import Patient from '../Patient/Patient';
 import RequestHistory from '../RequestHistory/RequestHistory';
 import './AdminPanel.css'

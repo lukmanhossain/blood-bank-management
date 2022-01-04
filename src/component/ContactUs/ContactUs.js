@@ -1,7 +1,8 @@
 import emailjs from "emailjs-com";
 import React from 'react';
 
-export default function ContactForm() {
+
+export default function ContactUs() {
 
      function sendEmail(e) {
         e.preventDefault();
@@ -34,7 +35,7 @@ export default function ContactForm() {
                         <div className="col-8 form-group pt-1 mx-auto">
                             <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
                         </div>
-                        <div className="col-8 pt-2 mx-auto">
+                        <div className="col-8 pt-2 mx-auto mb-5">
                             <input type="submit" className="btn btn-secondary" value="Send Message"></input>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import logo from "../../../images/bg.png";
+// import logo from "../../../images/bg.png";
 import useAuth from "../../../hooks/useAuth";
 
 const NavBar = () => {
@@ -14,7 +14,16 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="nav-container ">
         <NavLink exact to="/" className="nav-logo text-left">
-          <img className="myLogo" src={logo} alt="" />
+          <NavLink
+              exact
+              to="/"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              Save life
+            </NavLink>
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
@@ -31,6 +40,29 @@ const NavBar = () => {
           </li>
           <li className="nav-item">
             <NavLink
+              to="/donar"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              Donar
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              exact
+              to="/patient"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              Patient
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
               to="/contact-us"
               activeClassName="active"
               className="nav-links"
@@ -43,9 +75,6 @@ const NavBar = () => {
           <li className="nav-item">
                 {
                     user?.email ?
-                        // <NavLink to="/">
-                        //      <Button onClick={logOut} color="inherit">Logout</Button>
-                        // </NavLink>
                         <NavLink
                             to="/"
                             activeClassName="active"
@@ -56,9 +85,6 @@ const NavBar = () => {
                             Logout
                         </NavLink>
                         :
-                        // <NavLink to="/login">
-                        //     <Button color="inherit">Login</Button>
-                        // </NavLink>
                         <NavLink
                             to="/login"
                             activeClassName="active"
