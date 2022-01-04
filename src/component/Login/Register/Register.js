@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import './Register.css';
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
@@ -37,8 +38,15 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <Grid container spacing={2}>
+    <Container className="mb-5 pb-3">
+      <Grid className="registerContainer" container spacing={2}>
+      <Grid className="text-center" item xs={12} md={6}>
+          <img
+            style={{ width: "70%", borderRadius: "10px", marginTop:"50px", marginBottom:"10px" }}
+            src="https://i.ibb.co/7C3Fqh0/Registration.jpg"
+            alt=""
+          />
+        </Grid>
         <Grid item sx={{ mt: 8 }} xs={12} md={6}>
           <Typography variant="h5" gutterBottom>
             New User? Register Here
@@ -100,13 +108,6 @@ const Register = () => {
             </Alert>
           )}
           {authError && <Alert severity="error">{authError}</Alert>}
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <img
-            style={{ width: "100%", borderRadius: "10px" }}
-            src="https://i.ibb.co/7C3Fqh0/Registration.jpg"
-            alt=""
-          />
         </Grid>
       </Grid>
     </Container>
