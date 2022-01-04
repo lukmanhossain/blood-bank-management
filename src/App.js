@@ -1,4 +1,3 @@
-
 import AdminPanel from "./component/AdminPanel/AdminPanel";
 import {
   BrowserRouter as Router,

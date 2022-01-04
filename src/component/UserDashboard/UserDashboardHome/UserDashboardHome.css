@@ -1,0 +1,13 @@
+.total {
+  margin: 0;
+  color: #000000;
+}
+.count {
+  color: #fd06c7ec;
+}
+.donor-icon {
+  text-align: end;
+  font-size: 25px;
+  color: #3c06fd;
+  margin: 0px;
+}

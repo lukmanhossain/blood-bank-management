@@ -40,3 +40,10 @@
     font-weight: 700;
     font-family: serif;
 }
+
+.total-css{
+    background-image: linear-gradient( 
+63deg, #01fb4e70,#11e97b9e,#fbff01f2);
+    border-radius: 9px;
+    height: 114px;
+}
