@@ -4,13 +4,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  
+
 } from "react-router-dom";
+import Home from "./component/Home/Home";
 
 function App() {
   return (
     <div>
-        <Router>
+      {/* <Router>
      <div className="App">
        <Switch>
         
@@ -20,7 +21,8 @@ function App() {
        </Switch>
      </div>
    </Router>
-    
+     */}
+      <Home></Home>
     </div>
   );
 }
