@@ -5,8 +5,12 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+<<<<<<< HEAD
+    "@mui/material": "^5.2.7",
+=======
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.6",
+>>>>>>> 53e54622f7d24d495d7254da2ff1a32d97309f8b
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -18,9 +22,15 @@
     "react-bootstrap": "^2.1.0",
     "react-chartjs-2": "^4.0.0",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
+    "react-messenger-customer-chat": "^0.8.0",
+    "react-owl-carousel": "^2.3.3",
+=======
     "react-hook-form": "^7.22.5",
     "react-minimal-pie-chart": "^8.2.0",
+>>>>>>> 53e54622f7d24d495d7254da2ff1a32d97309f8b
     "react-router-dom": "^5.3.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.0",
     "recharts": "^2.1.8",
     "sweetalert2": "^11.3.3",
