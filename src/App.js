@@ -27,6 +27,7 @@ function App() {
             <Route path="/home">
               <Header></Header>
             </Route>
+           
             <Route path="/contact-us">
               <ContactForm></ContactForm>
             </Route>

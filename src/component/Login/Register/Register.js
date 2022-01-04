@@ -16,18 +16,6 @@ const Register = () => {
 
   const history = useHistory();
 
-<<<<<<< HEAD
-    const { user, registerUser, isLoading, authError} = useAuth();
- 
-    const handleOnBlur = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        console.log(newLoginData);
-        setLoginData(newLoginData);
-    }
-=======
   const { user, registerUser, isLoading, authError } = useAuth();
 
   const handleOnBlur = (e) => {
@@ -38,7 +26,6 @@ const Register = () => {
     console.log(newLoginData);
     setLoginData(newLoginData);
   };
->>>>>>> 19929197d442c8c1d722e6a5f41e39115e81e24d
 
   const handleLogin = (e) => {
     if (loginData.password !== loginData.confirmpassword) {
