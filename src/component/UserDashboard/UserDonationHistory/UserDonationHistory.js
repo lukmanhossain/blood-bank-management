@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import useAuth from "../../../hooks/useAuth";
 import SingleDonation from "./SingleDonation/SingleDonation";
 import "./UserDonationHistory.css";
 const UserDonationHistory = () => {
-  const [donations, setDonation] = useState([]);
+  const { user } = useAuth();
+  const [donations, setDonations] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/donateBlood`)
+      .then((res) => res.json())
+      .then((data) => setDonations(data));
+  }, []);
+  // console.log(donations);
   return (
     <div className="donation-history-container">
       <h2>My Donation History</h2>
@@ -20,20 +28,12 @@ const UserDonationHistory = () => {
             </tr>
           </thead>
           <tbody>
-            {/* {donations.map((donation) => (
+            {donations.map((donation) => (
               <SingleDonation
                 key={donation._id}
                 donation={donation}
               ></SingleDonation>
-            ))} */}
-            <tr>
-              <td>Ruhul Amin</td>
-              <td>26</td>
-              <td>B+</td>
-              <td>No</td>
-              <td>10/11/2020</td>
-              <td>Approved</td>
-            </tr>
+            ))}
           </tbody>
         </Table>
       </div>
