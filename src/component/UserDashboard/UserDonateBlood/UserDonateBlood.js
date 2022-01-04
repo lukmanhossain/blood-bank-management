@@ -3,22 +3,26 @@ import "./UserDonateBlood.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 const UserDonateBlood = () => {
+  const { user, logOut } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    // axios.post("", data).then((res) => {
-    //   if (res.data.insertedId) {
-    //     Swal.fire({
-    //       position: "center",
-    //       icon: "success",
-    //       title: "Thank you for your kindness",
-    //       showConfirmButton: true,
-    //     });
+    data.status = `Pending`;
+    data.email = user.email;
+    axios.post("http://localhost:5000/donateBlood", data).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Thank you for your kindness",
+          showConfirmButton: true,
+        });
 
-    //     reset();
-    //   }
-    // });
+        reset();
+      }
+    });
   };
   return (
     <div className="donate-blood-form-container ">
@@ -28,6 +32,7 @@ const UserDonateBlood = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             placeholder="Your Name"
+            defaultValue={user.displayName}
             {...register("name", { required: true, maxLength: 20 })}
           />
 
@@ -70,7 +75,7 @@ const UserDonateBlood = () => {
           />
 
           <button className="btn btn-danger mt-5" type="submit">
-            Donate Blood <i class="fas fa-tint"></i>
+            Donate Blood <i className="fas fa-tint"></i>
           </button>
         </form>
       </div>
