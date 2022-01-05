@@ -1,22 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 import "./UserBloodRequest.css";
 const UserBloodRequest = () => {
+  const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    data.email = user.email;
+    data.status = `Pending`;
     console.log(data);
-    // axios.post("", data).then((res) => {
-    //   if (res.data.insertedId) {
-    //     Swal.fire({
-    //       position: "center",
-    //       icon: "success",
-    //       title: "Thank you for your kindness",
-    //       showConfirmButton: true,
-    //     });
+    axios.post("http://localhost:5000/bloodRequest", data).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your request has been submitted",
+          showConfirmButton: true,
+        });
 
-    //     reset();
-    //   }
-    // });
+        reset();
+      }
+    });
   };
   return (
     <div className="request-blood-form-container ">
@@ -31,11 +37,7 @@ const UserBloodRequest = () => {
             {...register("name", { required: true, maxLength: 20 })}
           />
 
-          <input
-            placeholder="Patient Age"
-            type="number"
-            {...register("age", { min: 18, max: 99 })}
-          />
+          <input placeholder="Patient Age" type="number" {...register("age")} />
           <select {...register("bloodGroup")}>
             <option defaultValue="" disabled selected hidden>
               Blood Group

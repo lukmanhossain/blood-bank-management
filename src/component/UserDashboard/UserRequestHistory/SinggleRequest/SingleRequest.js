@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from "react";
+import useAuth from "../../../../hooks/useAuth";
 
-const SingleRequest = () => {
+const SingleRequest = (props) => {
+  const {
+    name,
+    age,
+    bloodGroup,
+    reason,
+    doctorName,
+    donateDate,
+    status,
+    quantity,
+  } = props.request;
   const [requests, setRequests] = useState([]);
+  const { user } = useAuth();
   useEffect(() => {
-    fetch(``)
+    fetch(`http://localhost:5000/${user.email}/bloodRequest`)
       .then((res) => res.json())
       .then((data) => setRequests(data));
   }, []);
   return (
     <tr>
-      <td>Ruhul Amin</td>
-      <td>26</td>
-      <td>Cancer</td>
-      <td>3</td>
-      <td>Dr. Forhad Uddin</td>
-      <td>10/11/2020</td>
-      <td>AB+</td>
-      <td>Approved</td>
+      <td>{name}</td>
+      <td>{age}</td>
+      <td>{reason}</td>
+      <td>{quantity}</td>
+      <td>{doctorName}</td>
+      <td>{donateDate}</td>
+      <td>{bloodGroup}</td>
+      <td>{status}</td>
     </tr>
   );
 };

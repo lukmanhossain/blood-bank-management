@@ -6,8 +6,15 @@ import "./UserDonationHistory.css";
 const UserDonationHistory = () => {
   const { user } = useAuth();
   const [donations, setDonations] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/donateBlood/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setDonations(data));
+  // }, []);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/donateBlood`)
+    fetch(`http://localhost:5000/${user.email}/donateBlood/`)
       .then((res) => res.json())
       .then((data) => setDonations(data));
   }, []);
