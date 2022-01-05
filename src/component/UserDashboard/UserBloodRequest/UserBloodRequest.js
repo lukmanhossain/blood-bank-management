@@ -11,18 +11,20 @@ const UserBloodRequest = () => {
     data.email = user.email;
     data.status = `Pending`;
     console.log(data);
-    axios.post("http://localhost:5000/bloodRequest", data).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Your request has been submitted",
-          showConfirmButton: true,
-        });
+    axios
+      .post("https://hidden-coast-99117.herokuapp.com/bloodRequest", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your request has been submitted",
+            showConfirmButton: true,
+          });
 
-        reset();
-      }
-    });
+          reset();
+        }
+      });
   };
   return (
     <div className="request-blood-form-container ">

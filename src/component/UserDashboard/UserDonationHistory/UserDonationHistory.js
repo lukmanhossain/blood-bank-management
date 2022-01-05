@@ -8,13 +8,13 @@ const UserDonationHistory = () => {
   const [donations, setDonations] = useState([]);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/donateBlood/${user.email}`)
+  //   fetch(`https://hidden-coast-99117.herokuapp.com/donateBlood/${user.email}`)
   //     .then((res) => res.json())
   //     .then((data) => setDonations(data));
   // }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/${user.email}/donateBlood/`)
+    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/donateBlood/`)
       .then((res) => res.json())
       .then((data) => setDonations(data));
   }, []);
