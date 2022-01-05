@@ -9,11 +9,12 @@ const Service = ({ service }) => {
     const { id, name, description, img } = service;
 
     return (
-        <Grid item xs={2} sm={4} md={4} >
+        <Grid item xs={3} sm={4} md={4} >
             <Card sx={{ minWidth: 275, border: 0, boxShadow: 0 }}>
                 <CardMedia
+                    sx={{ borderRadius: '16px' }}
                     component="img"
-                    style={{ width: 'auto', height: '80px', margin: '0 auto' }}
+                    style={{ width: 'auto', height: 'auto', margin: '0 auto' }}
                     image={img}
                     alt="green iguana"
                 />
@@ -23,7 +24,7 @@ const Service = ({ service }) => {
                         {name}
                     </Typography>
 
-                    <Typography sx={{ textAlign: 'center' }} variant="body2" color="text.secondary">
+                    <Typography sx={{ textAlign: 'center' }} variant="body2" color="text.primary">
                         {description}
 
                     </Typography>

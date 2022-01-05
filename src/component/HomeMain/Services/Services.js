@@ -12,17 +12,17 @@ const services = [
 
     {
         name: 'Organize Donors',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus necessitatibus soluta architecto tempora dolorem illo dolore cum voluptates veniam.',
+        description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
         img: "https://i.ibb.co/mG9R9dS/service1.png",
     },
     {
         name: 'Raise Awareness',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus necessitatibus soluta architecto tempora dolorem illo dolore cum voluptates veniam.',
+        description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
         img: 'https://i.ibb.co/fdTcxxw/service2.png',
     },
     {
         name: 'Collect Rare Blood',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus necessitatibus soluta architecto tempora dolorem illo dolore cum voluptates veniam.',
+        description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
         img: 'https://i.ibb.co/wSdfZbr/service3.png',
     },
 
@@ -31,12 +31,12 @@ const services = [
 
 const Services = () => {
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Container>
-                <Typography sx={{ fontweight: 700, my: 5, color: 'info.main', textAlign: 'center' }} variant="h4" component="div" >
+        <Box sx={{ flexGrow: 1, my: 5 }}>
+            <Container >
+                <Typography sx={{ fontweight: 700, my: 2, textAlign: 'center' }} className='text-title' variant="h4" component="div" >
                     Our Services
                 </Typography>
-                <Typography sx={{ fontweight: 600, m: 5, mx: "auto", textAlign: 'center' }} variant="h5" component="div">
+                <Typography sx={{ fontweight: 600, mb: 4, textAlign: 'center' }} variant="h5" component="div">
                     Services We Provide
                 </Typography>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -48,7 +48,7 @@ const Services = () => {
                     }
                 </Grid>
             </Container>
-        </Box>
+        </Box >
     );
 };
 
