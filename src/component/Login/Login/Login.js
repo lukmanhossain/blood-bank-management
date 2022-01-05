@@ -37,35 +37,35 @@ const Login = () => {
                     <img style={{ width: '100%' }} src="https://i.ibb.co/7j19CbV/Login.jpg" alt="" />
                 </Grid>
                 <Grid className="text-center" item sx={{ mt: 10 }} xs={12} md={6}>
-                    <Typography variant="h4" gutterBottom>
+                    <Typography sx={{ width: '60%'}} variant="h4" gutterBottom>
                         Login Here
                     </Typography>
                     <form onSubmit={handleLogin}>
                         <TextField
-                            sx={{ width: '75%' }}
+                            sx={{ width: '75%', mt: 1 }}
                             id="standard-basic"
                             label="Email"
                             name="email"
                             onChange={handleOnChange}
                             variant="standard" />
                         <TextField
-                            sx={{ width: '75%', m: 1 }}
+                            sx={{ width: '75%', mt: 1 }}
                             id="standard-basic"
                             label="Password"
                             type="password"
                             name="password"
                             onChange={handleOnChange}
                             variant="standard" />
-                        <Button sx={{ width: '75%', mt: 2, mb:2 }} type="submit" variant="contained">Login</Button>
+                        <Button sx={{ width: '75%', mt: 2, mb:1 }} type="submit" variant="contained">Login</Button>
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
-                            <Button variant="text">New User? Please Register</Button>
+                            <Button sx={{ width: '75%'}} variant="text">New User? Please Register</Button>
                         </NavLink>
                         {isLoading && <CircularProgress />} 
                         {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
-                    <p>--------- OR ----------</p>
-                    <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
+                    <p>----------------- OR -----------------</p>
+                    <Button sx={{ width: '75%'}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
                 </Grid>
             </Grid>
         </Container>

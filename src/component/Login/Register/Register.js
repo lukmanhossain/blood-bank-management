@@ -39,7 +39,7 @@ const Register = () => {
 
   return (
     <Container className="mb-5 pb-3">
-      <Grid className="registerContainer" container spacing={2}>
+      <Grid className="registerContainer" container spacing={1}>
       <Grid className="text-center" item xs={12} md={6}>
           <img
             style={{ width: "70%", borderRadius: "10px", marginTop:"50px", marginBottom:"10px" }}
@@ -47,14 +47,14 @@ const Register = () => {
             alt=""
           />
         </Grid>
-        <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+        <Grid item sx={{ mt: 8, width: '65%' }} xs={12} md={6}>
           <Typography variant="h5" gutterBottom>
             New User? Register Here
           </Typography>
           {!isLoading && (
             <form onSubmit={handleLogin}>
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", mt:1 }}
                 id="standard-basic"
                 label="Name"
                 name="name"
@@ -63,7 +63,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", mt:1}}
                 id="standard-basic"
                 label="Email"
                 name="email"
@@ -72,7 +72,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", mt:1}}
                 id="standard-basic"
                 label="Password"
                 type="password"
@@ -81,7 +81,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", m: 1 }}
+                sx={{ width: "75%", mt:1 }}
                 id="standard-basic"
                 label="ReType Your Password"
                 type="password"
@@ -90,14 +90,14 @@ const Register = () => {
                 variant="standard"
               />
               <Button
-                sx={{ width: "75%", mt: 2 }}
+                sx={{ width: "75%", mt: 2, mb:1 }}
                 type="submit"
                 variant="contained"
               >
                 Register
               </Button>
-              <NavLink style={{ textDecoration: "none" }} to="/login">
-                <Button variant="text">Already Register? Please Login</Button>
+              <NavLink style={{ textDecoration: "none"}} to="/login">
+                <Button sx={{ width: "75%" }} variant="text">Already Register? Please Login</Button>
               </NavLink>
             </form>
           )}
