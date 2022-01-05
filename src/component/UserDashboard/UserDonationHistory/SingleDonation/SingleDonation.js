@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 const SingleDonation = (props) => {
   const { name, age, bloodGroup, disease, donateDate, status } = props.donation;
 
-  console.log(name);
   return (
     <tr>
       <td>{name}</td>

@@ -6,12 +6,19 @@ import "./UserRequestHistory.css";
 const UserRequestHistory = () => {
   const [requests, setRequests] = useState([]);
   const { user } = useAuth();
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/bloodRequest/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setRequests(data));
+  // }, [requests]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/${user.email}/bloodRequest`)
       .then((res) => res.json())
       .then((data) => setRequests(data));
   }, [requests]);
-  console.log(requests);
+
   return (
     <div className="request-history-container">
       <h2>My Request History</h2>

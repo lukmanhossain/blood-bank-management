@@ -63,7 +63,10 @@ const UserDonateBlood = () => {
             <option defaultValue="o-">O-</option>
             <option defaultValue="ab-">AB-</option>
           </select>
-
+          <input
+            placeholder="Mobile Number"
+            {...register("mobile", { required: true })}
+          />
           <input
             placeholder="Address"
             {...register("address", { required: true })}
