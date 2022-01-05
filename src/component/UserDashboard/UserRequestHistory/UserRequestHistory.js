@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import useAuth from "../../../hooks/useAuth";
 import SingleRequest from "./SinggleRequest/SingleRequest";
 import "./UserRequestHistory.css";
 const UserRequestHistory = () => {
   const [requests, setRequests] = useState([]);
+  const { user } = useAuth();
+  useEffect(() => {
+    fetch(`http://localhost:5000/${user.email}/bloodRequest`)
+      .then((res) => res.json())
+      .then((data) => setRequests(data));
+  }, [requests]);
+  console.log(requests);
   return (
     <div className="request-history-container">
       <h2>My Request History</h2>
@@ -18,6 +26,7 @@ const UserRequestHistory = () => {
               <th>Doctor Name</th>
               <th>Date</th>
               <th>Blood Group</th>
+              <th>Address</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -25,7 +34,7 @@ const UserRequestHistory = () => {
             {requests.map((request) => (
               <SingleRequest
                 key={request._id}
-                donation={request}
+                request={request}
               ></SingleRequest>
             ))}
           </tbody>
