@@ -65,8 +65,13 @@ const UserDonateBlood = () => {
           </select>
 
           <input
+            placeholder="Address"
+            {...register("address", { required: true })}
+          />
+
+          <input
             placeholder="Disease (if any, oterwise type 'no')"
-            {...register("disease", { required: false, maxLength: 20 })}
+            {...register("disease", { required: true })}
           />
           <input
             type="date"

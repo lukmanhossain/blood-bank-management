@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminPanel from "./component/AdminPanel/AdminPanel";
 import ContactUs from "./component/ContactUs/ContactUs";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
@@ -10,14 +6,16 @@ import Login from "./component/Login/Login/Login";
 import Register from "./component/Login/Register/Register";
 import Footer from "./component/Shared/Footer/Footer";
 import NavBar from "./component/Shared/NavBar/NavBar";
+import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
+import UserDashboardHome from "./component/UserDashboard/UserDashboardHome/UserDashboardHome";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 
 function App() {
   return (
     <div>
       <AuthProvider>
-      <Router>
-      <NavBar />
+        <Router>
+          <NavBar />
           <Switch>
             <Route exact path="/">
               <HomeMain />
@@ -27,6 +25,9 @@ function App() {
             </Route>
             <Route path="/adminpanel">
               <AdminPanel />
+            </Route>
+            <Route path="/userdashboard">
+              <UserDashboard></UserDashboard>
             </Route>
             <Route path="/login">
               <Login />
@@ -38,7 +39,7 @@ function App() {
               <ContactUs />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>
