@@ -47,20 +47,6 @@ const Charts = () => {
         })
 },[]);
 
-
-  useEffect(()=>{ 
-    fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
-    .then(res => res.json())
-    .then(data => console.log(data))
-  },[])
-
-
- 
-
-
-
-
-
     const data = [{name: 'Blood Group', Total: 0, pv: 2400, amt: 2400},
     {name: 'A+', Total:`${a.length}`, pv: 2400, amt: 2400},
     {name: 'B+', Total:`${donorB.length}`, pv: 2400, amt: 2400},

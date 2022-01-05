@@ -1,0 +1,41 @@
+.user-icon{
+    font-size: 22px;
+    margin-right: 8px;
+    color: blueviolet;
+}
+.blood-grp{
+    color: #ff0000ba;
+}
+
+.card-taitels{
+    font-family: auto;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.name-donar{
+    font-family: math;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.concact-btn{
+    border: navajowhite;
+    background-color: white;
+    font-family: ui-rounded;
+    letter-spacing: 1px;
+    color: blue;
+    border-bottom: 2px solid #0000ff9e;
+    display: flex;
+    margin-left: 164px;
+}
+
+.btn-contact{
+    background-color: white;
+    border: none;
+    color: blue;
+}
+.btn-contact:hover{
+    background-color: white;
+    color: red;
+}

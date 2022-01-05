@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminPanel from "./component/AdminPanel/AdminPanel";
 import ContactUs from "./component/ContactUs/ContactUs";
+import HomeDonor from "./component/HomeDonor/HomeDonor";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
 import Login from "./component/Login/Login/Login";
 import Register from "./component/Login/Register/Register";
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/userdashboard">
               <UserDashboard></UserDashboard>
+            </Route>
+            <Route path="/donar">
+              <HomeDonor></HomeDonor>
             </Route>
             <Route path="/login">
               <Login />
