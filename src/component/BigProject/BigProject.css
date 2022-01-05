@@ -12,12 +12,16 @@
     border: 1px solid gray;
     padding: 8px 18px;
     border-radius: 9px;
-    background-color: brown;
+    background-color: #595959;
     font-size: 18px;
     font-family: initial;
     color: aliceblue;
     font-weight: 700;
     letter-spacing: 2px;
+}
+
+.donate-naw:hover{
+    background-color: #d943c3;
 }
 
 .image{
@@ -28,8 +32,9 @@
 .big-project{
     font-family: initial;
     text-align: center;
-    color: brown;
+    color: #ef0abe;
     letter-spacing: 1px;
+    margin-bottom: 34px;
 }
 
 .hospital{
@@ -47,7 +52,8 @@
     font-family: 'Font Awesome 5 Pro';
     letter-spacing: 1px;
     font-size: 16px;
-    color: #d9434e;
+    color: #181717;
+    font-weight: 100;
 }
 
 .money{

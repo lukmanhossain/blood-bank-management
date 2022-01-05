@@ -1,8 +1,8 @@
 .money-donation{
-    background-image: linear-gradient(
-        89deg, #cb5757,#ffbc00,#ff6a00ed);
-            border-radius: 9px;
-            font-family: ui-monospace;
+    background-image: linear-gradient( 
+89deg, #d57f9a,#e16faa,#e46bb4);
+    border-radius: 9px;
+    font-family: ui-monospace;
 }
 
 .total-withdrow{

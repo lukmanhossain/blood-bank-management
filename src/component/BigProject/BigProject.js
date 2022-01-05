@@ -5,20 +5,16 @@ import './BigProject.css'
 
 const BigProject = () => {
     const now = 40
-    // const now1 = 150;
-    // const terget = 650000;
-    // let raised =4500;
-    // let persent= raised/terget 
-    // let persent1=( persent*100)
     return (
         <div className='mx-3 mt-3'>
+              <h1 className='big-project'>Our Big Project</h1>
             <div className='row'>
                 <div className='col-lg-6 col-sm-12 mb-5'>
                 <img src="https://thumbs.dreamstime.com/b/hospital-building-modern-parking-lot-59693686.jpg" class="img-fluid  image" alt="..."/>
 
                 </div>
                 <div className='col-lg-6 col-sm-12'>
-                    <h1 className='big-project'>Our Big Project</h1>
+                  
                     <h1 className='hospital'>Insure <strong className='hospital-string'>Hospital</strong> & <br/>
                          Save the Futures World </h1>
                          <p>

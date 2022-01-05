@@ -11,13 +11,8 @@ import './AdminPanel.css'
 
 const AdminPanel = () => {
     let { path, url } = useRouteMatch();
-
-    // const style={
-    //     textDecoration:"none",
-
-    //         };
     return (    
-        <div className='mx-3 mt-5'>
+        <div className=''>
             {/* Admin panel Heding start */}
             <div className=' head-line'>
               <p className='blood-heading'> <i class="fab fa-gratipay love"></i>Blood Bank Management System</p>  
