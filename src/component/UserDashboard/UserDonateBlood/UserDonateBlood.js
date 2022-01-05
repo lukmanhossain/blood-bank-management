@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./UserDonateBlood.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -7,22 +7,35 @@ import useAuth from "../../../hooks/useAuth";
 const UserDonateBlood = () => {
   const { user, logOut } = useAuth();
   const { register, handleSubmit, reset } = useForm();
+  const [donars, setDonars] = useState([]);
+
+  useEffect(() => {
+    fetch("https://hidden-coast-99117.herokuapp.com/donateBlood").then((res) =>
+      res.json().then((data) => setDonars(data))
+    );
+  }, []);
+
   const onSubmit = (data) => {
     console.log(data);
     data.status = `Pending`;
     data.email = user.email;
-    axios.post("http://localhost:5000/donateBlood", data).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Thank you for your kindness",
-          showConfirmButton: true,
-        });
+    axios
+      .post("https://hidden-coast-99117.herokuapp.com/donateBlood", data)
+      .then((res) => {
+        if (!donars.filter((donar) => donar.email.length === 1)) {
+          return alert("User alrady registered");
+        }
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Thank you for your kindness",
+            showConfirmButton: true,
+          });
 
-        reset();
-      }
-    });
+          reset();
+        }
+      });
   };
   return (
     <div className="donate-blood-form-container ">

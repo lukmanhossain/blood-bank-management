@@ -8,13 +8,13 @@ const UserRequestHistory = () => {
   const { user } = useAuth();
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/bloodRequest/${user.email}`)
+  //   fetch(`https://hidden-coast-99117.herokuapp.com/bloodRequest/${user.email}`)
   //     .then((res) => res.json())
   //     .then((data) => setRequests(data));
   // }, [requests]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/${user.email}/bloodRequest`)
+    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/bloodRequest`)
       .then((res) => res.json())
       .then((data) => setRequests(data));
   }, [requests]);
