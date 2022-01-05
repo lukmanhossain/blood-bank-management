@@ -49,6 +49,11 @@ const UserBloodRequest = () => {
             <option value="male">O-</option>
             <option value="other">AB-</option>
           </select>
+
+          <input
+            placeholder="Address"
+            {...register("address", { required: true })}
+          />
           <input
             placeholder="Reason"
             {...register("reason", { required: false, maxLength: 20 })}
