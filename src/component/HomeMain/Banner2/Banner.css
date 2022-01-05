@@ -1,0 +1,21 @@
+.intro{
+    
+    display: flex;
+    background-color: #2D25A0;
+            
+}
+
+.intro-item{
+    width: 100%;
+    padding-left: 7%;
+     
+}
+
+/* -------Intro Section Image------- */
+.intro-item img{
+    width: 100%;
+    height: 80%;
+    
+}
+
+

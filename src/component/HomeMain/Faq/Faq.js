@@ -8,7 +8,7 @@ const Faq = () => {
         <>
             <h3 className='m-5 text-title text-center'>Frequently Asked Questions (FAQ)</h3>
             <div className='d-flex my-5'>
-                <div className='mx-auto' >
+                <div className='mx-auto ' >
                     <img src={gif} className='rounded' alt="" />
 
                 </div>
