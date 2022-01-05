@@ -17,3 +17,27 @@
     font-family: emoji;
     font-size: 13px;
 }
+
+td{
+    font-size: 12px;
+    font-family: auto;
+    text-align: start;
+    border: 1px solid #8080804a;
+}
+
+.spner-btn{
+    margin: auto;
+    display: block;
+    margin-top: 149px;
+}
+
+.selected-fild{
+    width: 35px;
+}
+.approbe-btn{
+    border: 1px solid gray;
+    margin: 2px;
+    padding: 3px;
+    border-radius: 8px;
+    background-color: cadetblue;
+}
