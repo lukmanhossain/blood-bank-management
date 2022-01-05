@@ -37,6 +37,7 @@ const Login = () => {
                     <img style={{ width: '100%' }} src="https://i.ibb.co/7j19CbV/Login.jpg" alt="" />
                 </Grid>
                 <Grid className="text-center" item sx={{ mt: 10 }} xs={12} md={6}>
+                    {isLoading && <CircularProgress />}
                     <Typography sx={{ width: '60%'}} variant="h4" gutterBottom>
                         Login Here
                     </Typography>
@@ -59,8 +60,7 @@ const Login = () => {
                         <Button sx={{ width: '75%', mt: 2, mb:1 }} type="submit" variant="contained">Login</Button>
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button sx={{ width: '75%'}} variant="text">New User? Please Register</Button>
-                        </NavLink>
-                        {isLoading && <CircularProgress />} 
+                        </NavLink> 
                         {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
