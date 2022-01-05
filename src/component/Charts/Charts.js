@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Charts.css'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
 
@@ -7,15 +7,71 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
 
 
 const Charts = () => {
+
+  const [donorB,setDonorB]=useState([]);
+  const [donorAB,setDonorAB]=useState([]);
+  const [a,setB]=useState([]);
+  const [o,setO]=useState([]);
+  /// positive data //
+  const [onegative,setOnegative]=useState([]);
+  const [anegative,setAnegative]=useState([]);
+  const [abnegative,setABnegative]=useState([]);
+  const [bnegative,setBnegative]=useState([]);
+
+  useEffect(()=>{
+    fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
+    .then(res => res.json())
+    .then(data =>
+        {
+           // positive blood group filter start//
+            const singlebloodgroup=data.filter(d =>d.bloodGroup ==="B+")
+            setDonorB(singlebloodgroup);
+            const singlebloodgroupab=data.filter(d =>d.bloodGroup ==="AB+")
+            setDonorAB(singlebloodgroupab);
+            const a=data.filter(d =>d.bloodGroup ==="A+")
+            setB(a);
+            const o=data.filter(d =>d.bloodGroup ==="O+")
+            setO(o);
+            // positive blood group filter end//
+
+            const aa=data.filter(d =>d.bloodGroup ==="O-")
+            setOnegative(aa);
+            const bb=data.filter(d =>d.bloodGroup ==="A-")
+            setAnegative(bb);
+            const cc=data.filter(d =>d.bloodGroup ==="AB-")
+            setABnegative(cc);
+            const dd=data.filter(d =>d.bloodGroup ==="B-")
+            setBnegative(dd);
+
+            
+        })
+},[]);
+
+
+  useEffect(()=>{ 
+    fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
+    .then(res => res.json())
+    .then(data => console.log(data))
+  },[])
+
+
+ 
+
+
+
+
+
     const data = [{name: 'Blood Group', Total: 0, pv: 2400, amt: 2400},
-    {name: 'A+', Total: 20, pv: 2400, amt: 2400},
-    {name: 'B+', Total: 10, pv: 2400, amt: 2400},
-    {name: 'O+', Total: 95, pv: 2400, amt: 2400},
-    {name: 'AB+', Total: 40, pv: 2400, amt: 2400},
-    {name: 'A-', Total: 66, pv: 2400, amt: 2400},
-    {name: 'B-', Total: 4, pv: 2400, amt: 2400},
-    {name: 'O-', Total: 15, pv: 2400, amt: 2400},
-    {name: 'AB-', Total: 9, pv: 2400, amt: 2400},
+    {name: 'A+', Total:`${a.length}`, pv: 2400, amt: 2400},
+    {name: 'B+', Total:`${donorB.length}`, pv: 2400, amt: 2400},
+    {name: 'O+', Total:`${o.length}`, pv: 2400, amt: 2400},
+    {name: 'AB+', Total:`${donorAB.length}`, pv: 2400, amt: 2400},
+
+
+    {name: 'A-', Total: `${anegative.length}`, pv: 2400, amt: 2400},
+    {name: 'B-', Total:`${bnegative.length}`, pv: 2400, amt: 2400},
+    {name: 'O-', Total: `${onegative.length}`, pv: 2400, amt: 2400},
+    {name: 'AB-', Total: `${abnegative.length}`, pv: 2400, amt: 2400},
 
 ];
 

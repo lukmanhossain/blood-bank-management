@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Charts from '../Charts/Charts';
 import './AdminHome.css'
 
 const AdminHome = () => {
+
+const [donors,setDonors]= useState([]);
+
+  useEffect(()=>{
+    fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
+    .then(res => res.json())
+    .then(data => setDonors(data))
+  },[])
+
+
+
   return (
     <div>
     <Charts></Charts>
@@ -14,7 +25,7 @@ const AdminHome = () => {
               <i class="fas fa-users"></i>
             </p>
             <p className="total">Total Donors</p>
-            <p className="count">4</p>
+            <p className="count">{donors.length}</p>
           </div>
         </div>
         <div className="col">
