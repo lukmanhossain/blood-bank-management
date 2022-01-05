@@ -3,7 +3,7 @@
   color: #000000;
 }
 .count {
-  color: #fd06c7ec;
+  color: #000000ec;
 }
 .donor-icon {
   text-align: end;
@@ -11,3 +11,19 @@
   color: #3c06fd;
   margin: 0px;
 }
+
+/* .card-plate {
+  background-color: #da8d75;
+  border-radius: 10px;
+  text-align: center;
+}
+.total-text {
+  text-align: center;
+  font-size: 24px;
+}
+.count-text {
+  text-align: center;
+  font-size: 34px;
+  border: 1px solid black;
+  border-radius: 50px;
+} */

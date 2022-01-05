@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useAuth from "../../../../hooks/useAuth";
 
 const SingleRequest = (props) => {
   const {
@@ -8,17 +7,12 @@ const SingleRequest = (props) => {
     bloodGroup,
     reason,
     doctorName,
-    donateDate,
+    requestDate,
     status,
     quantity,
+    address,
   } = props.request;
-  const [requests, setRequests] = useState([]);
-  const { user } = useAuth();
-  useEffect(() => {
-    fetch(`http://localhost:5000/${user.email}/bloodRequest`)
-      .then((res) => res.json())
-      .then((data) => setRequests(data));
-  }, []);
+
   return (
     <tr>
       <td>{name}</td>
@@ -26,8 +20,9 @@ const SingleRequest = (props) => {
       <td>{reason}</td>
       <td>{quantity}</td>
       <td>{doctorName}</td>
-      <td>{donateDate}</td>
+      <td>{requestDate}</td>
       <td>{bloodGroup}</td>
+      <td>{address}</td>
       <td>{status}</td>
     </tr>
   );

@@ -43,18 +43,18 @@ const UserDashboardHome = () => {
         <h4 className="mt-3 mb-3">Blood Donation Dashboard</h4>
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-4">
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border bg-light card-plate">
               <p className="donor-icon">
-                <i className="fas fa-paper-plane"></i>
+                <i className="fas fa-paper-plane text-primary"></i>
               </p>
-              <p className="total">Request Made</p>
-              <p className="count">{donations.length}</p>
+              <p className="total total-text">Request Made</p>
+              <p className="count count-text">{donations.length}</p>
             </div>
           </div>
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="fas fa-hourglass-half"></i>
+                <i className="fas fa-hourglass-half text-warning"></i>
               </p>
               <p className="total">Panding Request</p>
               <p className="count">{donationsPending.length}</p>
@@ -63,7 +63,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="far fa-check-circle"></i>
+                <i className="far fa-check-circle text-success"></i>
               </p>
               <p className="total">Approved Requests</p>
               <p className="count">{donationsApproved.length}</p>
@@ -72,7 +72,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="fas fa-times-circle"></i>
+                <i className="fas fa-times-circle text-danger"></i>
               </p>
               <p className="total">Rejected Request</p>
               <p className="count">{donationsRejected.length}</p>
@@ -87,7 +87,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="fas fa-paper-plane"></i>
+                <i className="fas fa-paper-plane text-primary"></i>
               </p>
               <p className="total">Request Made</p>
               <p className="count">{requests.length}</p>
@@ -96,7 +96,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="fas fa-hourglass-half"></i>
+                <i className="fas fa-hourglass-half text-warning"></i>
               </p>
               <p className="total">Panding Request</p>
               <p className="count">{requestsPending.length}</p>
@@ -105,7 +105,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="far fa-check-circle"></i>
+                <i className="far fa-check-circle text-success"></i>
               </p>
               <p className="total">Approved Requests</p>
               <p className="count">{requestsApproved.length}</p>
@@ -114,7 +114,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border bg-light">
               <p className="donor-icon">
-                <i className="fas fa-times-circle"></i>
+                <i className="fas fa-times-circle text-danger"></i>
               </p>
               <p className="total">Rejected Request</p>
               <p className="count">{requestsRejected.length}</p>
