@@ -1,10 +1,18 @@
 .shadow-effect {
-    background: rgb(10, 1, 63);
+    background: rgb(65, 62, 62);
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 18px;
     text-align: center;
-    border: 1px solid #040358;
-    box-shadow: 0 19px 38px rgb(11, 228, 217), 0 15px 12px rgb(252, 53, 53);
+    /* border: 1px solid rgb(59, 10, 104); */
+    /* box-shadow: 0 19px 38px rgb(11, 228, 217), 0 15px 12px rgb(252, 53, 53); */
+  }
+
+  .paragrap {
+    color: white;
+    width: 103%;
+    font-size: 17px;
+    font-weight: 100;
+    font-family: "Poppins", sans-serif;
   }
   #shadow-effect p {
     font-family: inherit;
@@ -39,7 +47,7 @@
   }
   #customer-testimonoals .item {
     text-align: center;
-    padding: 50px;
+    /* padding: 3px; */
     margin-bottom: 0px;
     opacity: 0.2;
     transform: scale3d(0.8, 0.8, 1);

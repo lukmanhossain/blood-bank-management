@@ -1,19 +1,29 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
+import './Testimonials.css'
 
 const Testimonial = ({ testimonial }) => {
     const { name, address, description, img } = testimonial;
     console.log("testimonial" + testimonial);
     return (
-        <div className="item">
-            <div className="shadow-effect">
-                <img className="img-circle" src={img} alt='' />
-                <p className='text-info fw-bold'>{description}</p>
-            </div>
-            <div className="testimonial-name">
-                <h5>{name}</h5>
-                <small>{address}</small>
-            </div>
-        </div>
+
+
+        <Card className='item shadow-effect' style={{ width: '22rem' }}>
+            <Card.Img className="img-circle" variant="top" src={img} />
+            <Card.Body>
+                <Card.Title className='fw-bold' style={{ color: 'crimson' }}>{name}</Card.Title>
+
+                <Card.Text className='paragrap'>
+
+                    {description}
+                </Card.Text>
+                <i className="fas fa-star" style={{ color: '#f8c51c' }}></i>
+                <i className="fas fa-star" style={{ color: '#f8c51c' }}></i>
+                <i className="fas fa-star" style={{ color: '#f8c51c' }}></i>
+                <i className="fas fa-star" style={{ color: '#f8c51c' }}></i>
+                <i class="fas fa-star-half-alt" style={{ color: '#f8c51c' }}></i>
+            </Card.Body>
+        </Card>
     );
 };
 

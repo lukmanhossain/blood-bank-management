@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactOwlCarousel from 'react-owl-carousel';
 import Testimonial from './Testimonial';
 import './Testimonials.css';
 import OwlCarousel from 'react-owl-carousel';
@@ -15,27 +14,27 @@ const Testimonials = () => {
 
         {
             name: 'Gareth Bale',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
             address: 'USA',
-            img: ' https://i.ibb.co/z8Qdx1Z/pexels-andrea-piacquadio-733872.jpg'
+            img: 'https://i.ibb.co/n1zYTr4/test1.png'
         },
         {
             name: 'Brandon Savage',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
             address: 'USA',
-            img: 'https://i.ibb.co/r6LjpJz/pexels-daniel-xavier-1239288.jpg'
+            img: '  https://i.ibb.co/ZxKhRbR/test2.png'
         },
         {
             name: 'Steve Burns',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
             address: 'USA',
-            img: 'https://i.ibb.co/CWMXj87/pexels-italo-melo-2379004.jpg'
+            img: ' https://i.ibb.co/TTfpJXb/test3.png'
         },
         {
             name: 'Kevin Canlas',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+            description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
             address: 'USA',
-            img: 'https://i.ibb.co/8m19N9k/pexels-andrea-piacquadio-3973335.jpg'
+            img: 'https://i.ibb.co/9ykHHw8/test4.png'
         },
     ]
     //Owl Carousel Settings
@@ -62,10 +61,10 @@ const Testimonials = () => {
         }
     };
     return (
-        <section id="testimonial" className="testimonials pt-70 pb-70">
+        <section id="testimonial" className="testimonials pt-50 pb-50">
             <div className="container mt-5">
-                <h3 className="miniTitle text-center text-primary">TESTIMONIALS</h3>
-                <div className="text-center ">
+                <h3 className="miniTitle text-center text-title">TESTIMONIALS</h3>
+                <div className="text-center mt-2 pt-2 ">
                     <h4 className="sectionTitle">What Our Clients are Saying?</h4>
                 </div>
                 {/* <p className="text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p> */}
