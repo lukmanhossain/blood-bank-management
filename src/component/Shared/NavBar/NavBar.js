@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import useAuth from "../../../hooks/useAuth";
-import logo from '../../../images/logo.png'
 import gif from '../../../images/blood-donate.gif'
 
 const NavBar = () => {
@@ -14,18 +13,11 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container ">
-        <NavLink exact to="/" className="nav-logo text-left">
-          <NavLink
-              exact
-              to="/"
-              activeClassName="active"
-              className="nav-links"
-              onClick={handleClick}
-              className="nav-name"
-            >
-              <img className="me-3 rounded-circle" src={gif} alt="" width="60" height="auto" />
-              Blood-Bank
-            </NavLink>
+        <NavLink exact to="/" className="nav-logo text-left d-flex">
+        <img className="me-3 rounded-circle" src={gif} alt="" width="58" height="52" />
+            <div className="nav-name">
+            Blood-Bank
+            </div>
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
@@ -49,6 +41,17 @@ const NavBar = () => {
               className="menu-name"
             >
               Donor
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/be-a-donar"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              Be A Donor
             </NavLink>
           </li>
           <li className="nav-item">
