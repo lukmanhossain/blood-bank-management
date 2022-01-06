@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import UserBloodRequest from "../UserBloodRequest/UserBloodRequest";
 import UserDashboardHome from "../UserDashboardHome/UserDashboardHome";
 import UserDonateBlood from "../UserDonateBlood/UserDonateBlood";
@@ -8,16 +9,17 @@ import UserDonationHistory from "../UserDonationHistory/UserDonationHistory";
 import UserRequestHistory from "../UserRequestHistory/UserRequestHistory";
 import "./UserDashboard.css";
 const UserDashboard = () => {
+  const { logOut } = useAuth();
   let { path, url } = useRouteMatch();
   return (
-    <div className="mx-3 mt-5">
+    <div className=" ">
       {/* User Dashboard Heding start */}
       <div className=" head-line">
         <p className="blood-heading">
           {" "}
-          <i class="fab fa-gratipay love"></i>Blood Bank Management System
+          <i class="fab fa-gratipay love"></i>User Dashboard
         </p>
-        <button className="log-out-btn">
+        <button onClick={logOut} className="log-out-btn">
           Logout <i class="fas fa-sign-out-alt"></i>
         </button>
       </div>
