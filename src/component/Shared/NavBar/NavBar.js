@@ -19,7 +19,7 @@ const NavBar = () => {
               activeClassName="active"
               className="nav-links"
               onClick={handleClick}
-              className="menu-name"
+              className="nav-name"
             >
               Blood-Bank
             </NavLink>
