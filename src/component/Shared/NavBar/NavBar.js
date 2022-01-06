@@ -21,7 +21,7 @@ const NavBar = () => {
               onClick={handleClick}
               className="menu-name"
             >
-              Save life
+              Blood-Bank
             </NavLink>
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -46,6 +46,28 @@ const NavBar = () => {
               className="menu-name"
             >
               Donor
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/userdashboard"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              UserDashboard
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/adminpanel"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              AdminDashboard
             </NavLink>
           </li>
           <li className="nav-item">
