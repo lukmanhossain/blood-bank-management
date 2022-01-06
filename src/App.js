@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminPanel from "./component/AdminPanel/AdminPanel";
 import ContactUs from "./component/ContactUs/ContactUs";
+import MakeAdmin from "./component/DashBoard/MakeAdmin/MakeAdmin";
 import HomeDonor from "./component/HomeDonor/HomeDonor";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
 import Login from "./component/Login/Login/Login";
 import Register from "./component/Login/Register/Register";
+import NotFound from "./component/NotFound/NotFound";
 import Footer from "./component/Shared/Footer/Footer";
 import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
@@ -39,8 +41,11 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/contact-us">
-              <ContactUs />
+            <Route path="/makeAdmin">
+              <MakeAdmin />
+            </Route>
+            <Route path="*">
+              <NotFound/>
             </Route>
           </Switch>
           <Footer />

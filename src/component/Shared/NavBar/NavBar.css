@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.651);
+  background-color: rgba(0, 0, 0, 0.699);
   text-transform: uppercase;
   height: 80px;
   display: flex;
@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 467px) {
   .navbar {
-    background-color: rgba(0, 0, 0, 0.651);
+    background-color: rgba(0, 0, 0, 0.699);
   }
 }
 
@@ -66,7 +66,7 @@
 .menu-name:hover {
   list-style: none;
   text-decoration: none;
-  color: #ffdd40;
+  color: rgb(243, 78, 78);
 }
 
 .nav-item:after {
@@ -79,7 +79,8 @@
 }
 
 .nav-item .active {
-  color: #ffdd40;
+  font-weight: 700;
+  color: rgb(226, 65, 65);
 }
 
 .nav-icon {
@@ -112,7 +113,7 @@
   }
 
   .nav-menu.active {
-    background-color: rgba(0, 0, 0, 0.651);
+    background-color: rgba(0, 0, 0, 0.699);
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;

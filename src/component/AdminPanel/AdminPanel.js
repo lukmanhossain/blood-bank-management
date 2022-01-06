@@ -8,6 +8,7 @@ import Home from '../AdminHome/AdminHome';
 import Patient from '../Patient/Patient';
 import RequestHistory from '../RequestHistory/RequestHistory';
 import './AdminPanel.css'
+import MakeAdmin from '../DashBoard/MakeAdmin/MakeAdmin';
 
 const AdminPanel = () => {
     let { path, url } = useRouteMatch();
@@ -43,6 +44,9 @@ const AdminPanel = () => {
                             <Link className='link-style' to={`${url}/bloodStocks`}>
                                 <li className='list-item'><i class="fas fa-hand-holding-medical list-icon"></i>Blood Stocks</li>
                             </Link>
+                            <Link className='link-style' to={`${url}/make-admin`}>
+                                <li className='list-item'><i class="fas fa-hand-holding-medical list-icon"></i>Make Admin</li>
+                            </Link>
                         
                         </div>
                 </div>
@@ -70,6 +74,9 @@ const AdminPanel = () => {
                             </Route>
                             <Route exact path={`${path}/bloodStocks`}> 
                            <BloodStocks></BloodStocks>
+                            </Route>
+                            <Route exact path={`${path}/make-admin`}> 
+                           <MakeAdmin></MakeAdmin>
                             </Route>
                             
                     </Switch>
