@@ -30,7 +30,7 @@ function App() {
             <Route path="/userdashboard">
               <UserDashboard></UserDashboard>
             </Route>
-            <Route path="/donar">
+            <Route path="/donor">
               <HomeDonor></HomeDonor>
             </Route>
             <Route path="/login">

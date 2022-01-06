@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-// import logo from "../../../images/bg.png";
 import useAuth from "../../../hooks/useAuth";
 
 const NavBar = () => {
@@ -40,25 +39,13 @@ const NavBar = () => {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/donar"
+              to="/donor"
               activeClassName="active"
               className="nav-links"
               onClick={handleClick}
               className="menu-name"
             >
-              Donar
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to="/patient"
-              activeClassName="active"
-              className="nav-links"
-              onClick={handleClick}
-              className="menu-name"
-            >
-              Patient
+              Donor
             </NavLink>
           </li>
           <li className="nav-item">
