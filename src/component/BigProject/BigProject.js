@@ -24,7 +24,7 @@ const BigProject = () => {
                              <p className='terget'>RAISED   <small className='money'>$4500</small></p>
                              <p className='terget'>GOAL  <small className='money'>$650000</small></p> 
                         </div>
-                        <p> <ProgressBar now={now} label={`${now}%`} />;</p>
+                        <p> <ProgressBar now={now} label={`${now}%`} /></p>
 
                         <button className='donate-naw'>Donate Now</button>
                 </div>

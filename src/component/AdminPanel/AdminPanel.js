@@ -45,7 +45,7 @@ const AdminPanel = () => {
                                 <li className='list-item'><i class="fas fa-hand-holding-medical list-icon"></i>Blood Stocks</li>
                             </Link>
                             <Link className='link-style' to={`${url}/make-admin`}>
-                                <li className='list-item'><i class="fas fa-hand-holding-medical list-icon"></i>Make Admin</li>
+                                <li className='list-item'><i class="fas fa-user-shield"></i>Make Admin</li>
                             </Link>
                         
                         </div>
