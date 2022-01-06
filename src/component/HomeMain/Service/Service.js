@@ -23,7 +23,7 @@ const Service = ({ service }) => {
 
                 <CardContent>
 
-                    <Typography variant='h6' component='div' sx={{ color: 'success-main', mx: "auto", textAlign: 'center' }}>
+                    <Typography variant='h6' component='div' sx={{ color: 'success.main', mx: "auto", textAlign: 'center' }}>
                         {name}
                     </Typography>
                     <Typography variant='body4' sx={{ mx: "auto", textAlign: 'center', pl: '3' }}>

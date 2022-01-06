@@ -1,5 +1,6 @@
 import { Alert, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -19,17 +20,35 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    setSuccess(true);
-                }
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      title: "Made Admin Successfull",
+                      showConfirmButton: true,
+                      timer: 1500,
+                    });
+                    setEmail("");
+                  }
+                  if (data.modifiedCount === 0 && data.matchedCount === 1) {
+                    Swal.fire({
+                      text: `This User Is Already Admin`,
+                    });
+                  }
+                  if (data.modifiedCount === 0 && data.matchedCount === 0) {
+                    Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: `User Not Found`,
+                    });
+                  }
 
             })
 
         e.preventDefault()
     }
     return (
-        <div className='container p-5'>
-            <h2>Make A Admin</h2>
-            {success && <Alert className="mb-3 w-50" severity="success">Admin Created Successfully</Alert>}
+        <div className='make-admin-form-container make-admin-form'>
+            <h2>Make An Admin</h2>
             <form className='mb-5, pb-5' onSubmit={handleAdminSubmit}>
                 <TextField
                     sx={{ width: '30%' }}

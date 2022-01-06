@@ -12,6 +12,8 @@ const useFirebase = () => {
 
     const [authError, setAuthError] = useState('');
 
+    const [admin, setAdmin] = useState(false);
+
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -83,6 +85,12 @@ const useFirebase = () => {
         });
         return () => unSubscribed;
     }, [auth])
+
+    useEffect(() => {
+        fetch(`https://hidden-coast-99117.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
     
     const logOut = () => {
         setIsLoading(true);
@@ -106,6 +114,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         isLoading,
         authError,
         signInWithGoogle,

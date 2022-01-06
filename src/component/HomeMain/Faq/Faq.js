@@ -6,15 +6,12 @@ const Faq = () => {
     return (
         //FAQ Section
         <>
-
             <h3 className='m-5 text-title text-center'>Frequently Asked Questions (FAQ)</h3>
             <div className=' row mx-5 mb-5 '>
                 <div className='col-lg-6 col-sm-12  ' >
                     <img src={gif} className='rounded img-fluid' alt="" />
-
                 </div>
                 <div id='faq' className='col-lg-6 col-sm-12 my-5' >
-
                     <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>Who Are We?</Accordion.Header>

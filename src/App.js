@@ -6,12 +6,13 @@ import HomeDonor from "./component/HomeDonor/HomeDonor";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
 import Login from "./component/Login/Login/Login";
 import Register from "./component/Login/Register/Register";
-import NotFound from "./component/NotFound/NotFound";
+import NotFound from "./component/Shared/NotFound/NotFound";
 import Footer from "./component/Shared/Footer/Footer";
 import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
 import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+// import DashBoard from "./component/DashBoard/DashBoard/DashBoard";
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
             <Route path="/home">
               <HomeMain />
             </Route>
-            <Route path="/adminpanel">
+            {/* <Route path="/dashboard">
+              <DashBoard />
+            </Route> */}
+            <Route path="/admindashboard">
               <AdminPanel />
             </Route>
             <Route path="/userdashboard">
