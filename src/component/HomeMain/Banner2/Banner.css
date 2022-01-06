@@ -1,7 +1,7 @@
 .intro{
     
     display: flex;
-    background-color: #2D25A0;
+    background-color: #ffffff;
             
 }
 
@@ -13,8 +13,9 @@
 
 /* -------Intro Section Image------- */
 .intro-item img{
-    width: 100%;
+    width: 90%;
     height: 80%;
+    border-radius: 15px;
     
 }
 

@@ -6,13 +6,14 @@ const Faq = () => {
     return (
         //FAQ Section
         <>
+
             <h3 className='m-5 text-title text-center'>Frequently Asked Questions (FAQ)</h3>
-            <div className='d-flex my-5'>
-                <div className='mx-auto ' >
-                    <img src={gif} className='rounded' alt="" />
+            <div className=' row mx-5 mb-5 '>
+                <div className='col-lg-6 col-sm-12  ' >
+                    <img src={gif} className='rounded img-fluid' alt="" />
 
                 </div>
-                <div id='faq' className='mx-auto my-5' style={{ width: '50%' }}>
+                <div id='faq' className='col-lg-6 col-sm-12 my-5' >
 
                     <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
@@ -42,6 +43,7 @@ const Faq = () => {
                     </Accordion>
                 </div>
             </div>
+
         </>
     );
 };
