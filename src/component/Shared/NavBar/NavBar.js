@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import useAuth from "../../../hooks/useAuth";
-import gif from '../../../images/blood-donate.gif'
+import gif from '../../../images/blood-donate.gif';
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 const NavBar = () => {
   const { user, logOut } = useAuth();
@@ -67,7 +69,7 @@ const NavBar = () => {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/adminpanel"
+              to="/admindashboard"
               activeClassName="active"
               className="nav-links"
               onClick={handleClick}
@@ -88,27 +90,17 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            {
-              user?.email ?
-                <NavLink
-                  to="/"
-                  activeClassName="active"
-                  className="nav-links"
-                  onClick={logOut}
-                  className="menu-name"
-                >
-                  Logout
-                </NavLink>
-                :
-                <NavLink
-                  to="/login"
-                  activeClassName="active"
-                  className="nav-links"
-                  className="menu-name"
-                >
-                  Login
-                </NavLink>
-            }
+          {user.email ? (
+                <Nav.Link>
+                  <button className="btn btn-warning" onClick={logOut}>
+                    LOGOUT
+                  </button>
+                </Nav.Link>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  <button className="btn btn-warning">LOGIN</button>
+                </Nav.Link>
+              )}
           </li>
         </ul>
         <div className="nav-icon " onClick={handleClick}>
