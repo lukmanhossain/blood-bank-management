@@ -1,7 +1,7 @@
 import React from 'react';
 import BigProject from '../../BigProject/BigProject';
 import Ourteam from '../../Ourteam/Ourteam';
-import Banner2 from '../Banner2/Banner2';
+import Banner from '../Banner/Banner';
 import Faq from '../Faq/Faq';
 import Services from '../Services/Services';
 import Testimonials from '../Testimonial/Testimonials';
@@ -9,13 +9,12 @@ import Testimonials from '../Testimonial/Testimonials';
 const HomeMain = () => {
     return (
         <div>
-            <Banner2></Banner2>
+            <Banner></Banner>
             <Services></Services>
             <BigProject></BigProject>
             <Ourteam></Ourteam>
             <Testimonials></Testimonials>
             <Faq></Faq>
-
         </div>
     );
 };

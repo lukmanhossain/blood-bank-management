@@ -1,67 +1,25 @@
 import React from 'react';
+import './Banner.css';
+import banner2 from '../../../images/banner2.gif'
+import { NavLink } from 'react-router-dom';
 
 
 const Banner = () => {
-
     return (
-
-
-        <div>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src='https://i.ibb.co/0rJMnXq/slide1.png' class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Blood bank</h5>
-                            <p>Need blood? Don't panick, Just reach us & we are ready to help you!!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src='https://i.ibb.co/9crryt8/slide2.png' class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Blood bank</h5>
-                            <p>Need blood? Don't panick, Just reach us & we are ready to help you!!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src='https://i.ibb.co/hMn3R5X/slide3.png' class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Blood bank</h5>
-                            <p>Need blood? Don't panick, Just reach us & we are ready to help you!!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src='https://i.ibb.co/yRCb9wX/slide4.png' class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Blood bank</h5>
-                            <p>Need blood? Don't panick, Just reach us & we are ready to help you!!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src='https://i.ibb.co/Jyn65jb/slide5.png' class="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Blood bank</h5>
-                            <p>Need blood? Don't panick, Just reach us & we are ready to help you!!</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        // Banner Section
+        <div className='row mx-5 my-5'>
+            <div className="col-lg-6 col-sm-12 p-5">
+                <h1> <span className='text-success'>Donate Blood</span> <br />
+                    <span className='text-danger'> Save Life</span>
+                </h1>
+                <p className='mt-2'>This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations. One can search the desired blood group according to his or her prefferred location</p>
+                <NavLink to='/donor'>
+                    <button type="button" class="btn btn-outline-danger mt-2">Find Donor</button>
+                </NavLink>
             </div>
-
+            <div className="col-lg-6 col-sm-12">
+                <img className='img-fluid' src={banner2} alt="" />
+            </div>
         </div>
     );
 };
