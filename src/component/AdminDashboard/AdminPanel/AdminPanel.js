@@ -1,23 +1,26 @@
 import React from 'react';
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import BloodRequests from '../../BloodRequests/BloodRequests';
-import BloodStocks from '../../BloodStocks/BloodStocks';
-import Donation from '../../Donation/Donation';
+import BloodRequests from '../BloodRequests/BloodRequests';
+import BloodStocks from '../BloodStocks/BloodStocks';
+import Donation from '../Donation/Donation';
 import Donor from '../../Donor/Donor';
-import Home from '../../AdminHome/AdminHome';
-import Patient from '../../Patient/Patient';
-import RequestHistory from '../../RequestHistory/RequestHistory';
+import Home from '../AdminHome/AdminHome';
+import Patient from '../Patient/Patient';
+import RequestHistory from '../RequestHistory/RequestHistory';
 import './AdminPanel.css'
-import MakeAdmin from '../../DashBoard/MakeAdmin/MakeAdmin';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import useAuth from '../../../hooks/useAuth';
 
 const AdminPanel = () => {
+    const {logOut} = useAuth();
+
     let { path, url } = useRouteMatch();
     return (    
         <div className=''>
             {/* Admin panel Heding start */}
             <div className=' head-line'>
-              <p className='blood-heading'> <i class="fab fa-gratipay love"></i>Blood Bank Management System</p>  
-              <button className='log-out-btn'>Logout <i class="fas fa-sign-out-alt"></i></button>
+              <h4 className='blood-heading'> <i class="fab fa-gratipay love"></i> Admin Dashboard</h4>  
+              <button onClick={logOut} className='log-out-btn'>Logout <i class="fas fa-sign-out-alt"></i></button>
             </div>
           {/* Admin panel Heding end */}
                 <div className='row dashbord-fild '>

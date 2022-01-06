@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AdminPanel from "./component/AdminPanel/AdminPanel";
+import AdminPanel from "./component/AdminDashboard/AdminPanel/AdminPanel";
 import ContactUs from "./component/ContactUs/ContactUs";
-import MakeAdmin from "./component/DashBoard/MakeAdmin/MakeAdmin";
+import MakeAdmin from "./component/AdminDashboard/MakeAdmin/MakeAdmin";
 import HomeDonor from "./component/HomeDonor/HomeDonor";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
 import Login from "./component/Login/Login/Login";
@@ -10,7 +10,7 @@ import NotFound from "./component/NotFound/NotFound";
 import Footer from "./component/Shared/Footer/Footer";
 import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
-import UserDashboardHome from "./component/UserDashboard/UserDashboardHome/UserDashboardHome";
+import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 
 function App() {
@@ -35,6 +35,9 @@ function App() {
             <Route path="/donor">
               <HomeDonor></HomeDonor>
             </Route>
+            <Route path="/be-a-donar">
+              <UserDonateBlood/>
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
@@ -43,6 +46,9 @@ function App() {
             </Route>
             <Route path="/makeAdmin">
               <MakeAdmin />
+            </Route>
+            <Route path="/contact-us">
+              <ContactUs />
             </Route>
             <Route path="*">
               <NotFound/>
