@@ -16,16 +16,16 @@ const NavBar = () => {
       <div className="nav-container ">
         <NavLink exact to="/" className="nav-logo text-left">
           <NavLink
-            exact
-            to="/"
-            activeClassName="active"
-            className="nav-links"
-            onClick={handleClick}
-            className="menu-name"
-          >
-            <img className="me-3 rounded-circle" src={gif} alt="" width="60" height="auto" />
-            Save life
-          </NavLink>
+              exact
+              to="/"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="nav-name"
+            >
+              <img className="me-3 rounded-circle" src={gif} alt="" width="60" height="auto" />
+              Blood-Bank
+            </NavLink>
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
@@ -49,6 +49,28 @@ const NavBar = () => {
               className="menu-name"
             >
               Donor
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/userdashboard"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              UserDashboard
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/adminpanel"
+              activeClassName="active"
+              className="nav-links"
+              onClick={handleClick}
+              className="menu-name"
+            >
+              AdminDashboard
             </NavLink>
           </li>
           <li className="nav-item">
