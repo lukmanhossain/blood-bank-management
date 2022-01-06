@@ -64,8 +64,8 @@ const Login = () => {
                         {user?.email && <Alert severity="success">Successfully Login Your Account</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
-                    <p>----------------- OR -----------------</p>
-                    <Button sx={{ width: '75%'}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
+                    <p>------------- OR -------------</p>
+                    <Button sx={{ width: '75%', mb:5}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
                 </Grid>
             </Grid>
         </Container>

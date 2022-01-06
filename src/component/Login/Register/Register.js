@@ -54,7 +54,7 @@ const Register = () => {
           {!isLoading && (
             <form onSubmit={handleLogin}>
               <TextField
-                sx={{ width: "75%", mt:1 }}
+                sx={{ width: "75%", mt:1, ml:2 }}
                 id="standard-basic"
                 label="Name"
                 name="name"
@@ -63,7 +63,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", mt:1}}
+                sx={{ width: "75%", mt:1, ml:2}}
                 id="standard-basic"
                 label="Email"
                 name="email"
@@ -72,7 +72,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", mt:1}}
+                sx={{ width: "75%", mt:1, ml:2}}
                 id="standard-basic"
                 label="Password"
                 type="password"
@@ -81,7 +81,7 @@ const Register = () => {
                 variant="standard"
               />
               <TextField
-                sx={{ width: "75%", mt:1 }}
+                sx={{ width: "75%", mt:1, ml:2 }}
                 id="standard-basic"
                 label="ReType Your Password"
                 type="password"
@@ -90,7 +90,7 @@ const Register = () => {
                 variant="standard"
               />
               <Button
-                sx={{ width: "75%", mt: 2, mb:1 }}
+                sx={{ width: "75%", mt: 2, mb:1, ml:2 }}
                 type="submit"
                 variant="contained"
               >
