@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import useAuth from "../../../hooks/useAuth";
+import logo from '../../../images/logo.png'
+import gif from '../../../images/blood-donate.gif'
 
 const NavBar = () => {
-    const { user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
 
   const [click, setClick] = useState(false);
 
@@ -21,6 +23,7 @@ const NavBar = () => {
               onClick={handleClick}
               className="nav-name"
             >
+              <img className="me-3 rounded-circle" src={gif} alt="" width="60" height="auto" />
               Blood-Bank
             </NavLink>
         </NavLink>
@@ -82,27 +85,27 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-                {
-                    user?.email ?
-                        <NavLink
-                            to="/"
-                            activeClassName="active"
-                            className="nav-links"
-                            onClick={logOut}
-                            className="menu-name"
-                            >
-                            Logout
-                        </NavLink>
-                        :
-                        <NavLink
-                            to="/login"
-                            activeClassName="active"
-                            className="nav-links"
-                            className="menu-name"
-                            >
-                            Login
-                        </NavLink>
-                }
+            {
+              user?.email ?
+                <NavLink
+                  to="/"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={logOut}
+                  className="menu-name"
+                >
+                  Logout
+                </NavLink>
+                :
+                <NavLink
+                  to="/login"
+                  activeClassName="active"
+                  className="nav-links"
+                  className="menu-name"
+                >
+                  Login
+                </NavLink>
+            }
           </li>
         </ul>
         <div className="nav-icon " onClick={handleClick}>
