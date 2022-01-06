@@ -25,6 +25,7 @@
 - From the contact section any one can reach us for any queries
 
 - From Donation section, one can donate money using SSL commerz & Stripe
+- User can chat via messenger custom chat with admins
 
 
 

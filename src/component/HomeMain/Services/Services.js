@@ -13,17 +13,17 @@ const services = [
     {
         name: 'Organize Donors',
         description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
-        img: "https://i.ibb.co/mG9R9dS/service1.png",
+        img: 'https://us.123rf.com/450wm/photobuay/photobuay1811/photobuay181100039/121410039-donate-blood-group-doctor-concepts.jpg',
     },
     {
         name: 'Raise Awareness',
         description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
-        img: 'https://i.ibb.co/fdTcxxw/service2.png',
+        img: "https://kauveryhospital.com/blog/wp-content/uploads/2021/06/pexels-photo-6823567-1200x545_c.jpeg",
     },
     {
         name: 'Collect Rare Blood',
         description: 'This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.',
-        img: 'https://i.ibb.co/wSdfZbr/service3.png',
+        img: 'https://www.sharp.com/health-news/images/Blood-donation-myths-HN1221-Stock-844661710-Sized.png',
     },
 
 
