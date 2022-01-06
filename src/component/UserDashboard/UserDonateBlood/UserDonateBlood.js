@@ -22,9 +22,6 @@ const UserDonateBlood = () => {
     axios
       .post("https://hidden-coast-99117.herokuapp.com/donateBlood", data)
       .then((res) => {
-        if (!donars.filter((donar) => donar.email.length === 1)) {
-          return alert("User alrady registered");
-        }
         if (res.data.insertedId) {
           Swal.fire({
             position: "center",
