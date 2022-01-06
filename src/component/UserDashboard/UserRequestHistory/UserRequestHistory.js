@@ -19,13 +19,26 @@ const UserRequestHistory = () => {
       .then((data) => setRequests(data));
   }, [requests]);
 
+  if (!requests.length) {
+    return (
+      <button class="btn btn-primary spner-btn" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    );
+  }
+
   return (
     <div className="request-history-container">
       <h2>My Request History</h2>
       <div className="request-history">
         <Table striped bordered hover>
           <thead>
-            <tr>
+            <tr className="table-head">
               <th>Patient Name</th>
               <th>Patient Age</th>
               <th>Reason</th>

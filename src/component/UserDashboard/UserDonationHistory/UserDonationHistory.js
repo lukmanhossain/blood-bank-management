@@ -18,14 +18,27 @@ const UserDonationHistory = () => {
       .then((res) => res.json())
       .then((data) => setDonations(data));
   }, []);
-  // console.log(donations);
+
+  if (!donations.length) {
+    return (
+      <button class="btn btn-primary spner-btn" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    );
+  }
+
   return (
     <div className="donation-history-container">
       <h2>My Donation History</h2>
       <div className="donation-history">
         <Table striped bordered hover>
           <thead>
-            <tr>
+            <tr className="table-head">
               <th>Name</th>
               <th>Age</th>
               <th>Blood Group</th>

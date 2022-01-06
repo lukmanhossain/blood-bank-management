@@ -19,6 +19,14 @@ const UserDonateBlood = () => {
     console.log(data);
     data.status = `Pending`;
     data.email = user.email;
+    // if (donars.map((donar) => donar.email === user.email)) {
+    //   return Swal.fire({
+    //     position: "center",
+    //     icon: "error",
+    //     title: "You are already registered as a donar",
+    //     showConfirmButton: true,
+    //   });
+    // }
     axios
       .post("https://hidden-coast-99117.herokuapp.com/donateBlood", data)
       .then((res) => {
@@ -49,9 +57,9 @@ const UserDonateBlood = () => {
           <input
             placeholder="Your Age (18+ Only)"
             type="number"
-            {...register("age", { min: 18, max: 99 })}
+            {...register("age", { min: 18, required: true })}
           />
-          <select {...register("gender")}>
+          <select {...register("gender", { required: true })}>
             <option value="" disabled selected hidden>
               Gender
             </option>
@@ -60,7 +68,7 @@ const UserDonateBlood = () => {
             <option defaultValue="other">Other</option>
           </select>
 
-          <select {...register("bloodGroup")}>
+          <select {...register("bloodGroup", { required: true })}>
             <option defaultValue="" disabled selected hidden>
               Select Your Blood Group
             </option>
@@ -86,10 +94,11 @@ const UserDonateBlood = () => {
             placeholder="Disease (if any, oterwise type 'no')"
             {...register("disease", { required: true })}
           />
+          <label>Last blood donate date:</label>
           <input
             type="date"
-            placeholder="Donating Date"
-            {...register("donateDate", { required: true, maxLength: 20 })}
+            placeholder="Last donate date"
+            {...register("lastDonateDate", { required: true, maxLength: 20 })}
           />
 
           <button className="btn btn-danger mt-5" type="submit">

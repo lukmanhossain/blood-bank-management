@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 import "./UserDashboardHome.css";
 const UserDashboardHome = () => {
@@ -38,7 +39,7 @@ const UserDashboardHome = () => {
     (donate) => donate.status === "Rejected"
   );
   return (
-    <div>
+    <Container>
       <div>
         <h4 className="mt-3 mb-3">Blood Donation Dashboard</h4>
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-4">
@@ -122,7 +123,7 @@ const UserDashboardHome = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
