@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 
@@ -6,6 +6,9 @@ const CheckOutForm = () => {
 
     const stripe = useStripe();
     const elements = useElements();
+
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,19 +20,20 @@ const CheckOutForm = () => {
             return;
         }
         // setProcessing(true);
-        // const { error, paymentMethod } = await stripe.createPaymentMethod({
-        //     type: 'card',
-        //     card
-        // });
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card
+        });
 
-        // if (error) {
-        //     setError(error.message);
-        //     setSuccess('');
-        // }
-        // else {
-        //     setError('');
-        //     console.log(paymentMethod);
-        // }
+        if (error) {
+            setError(error.message);
+            // setSuccess('');
+            console.log(error);
+        }
+        else {
+            setError('');
+            console.log(paymentMethod);
+        }
 
         // // payment intent
         // const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
@@ -77,27 +81,33 @@ const CheckOutForm = () => {
 
     return (
         <div>
+        {
+            error && <p style={{ color: 'red' }}>{error}</p>
+        }
+        {
+            success && <p style={{ color: 'green' }}>{success}</p>
+        }
             <form onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: '16px',
-              color: '#424770',
-              '::placeholder': {
-                color: '#aab7c4',
-              },
-            },
-            invalid: {
-              color: '#9e2146',
-            },
-          },
-        }}
-      />
-      <button type="submit" disabled={!stripe}>
-        Pay
-      </button>
-    </form>
+                    <CardElement
+                        options={{
+                        style: {
+                            base: {
+                            fontSize: '16px',
+                            color: '#424770',
+                            '::placeholder': {
+                                color: '#aab7c4',
+                            },
+                            },
+                            invalid: {
+                            color: '#9e2146',
+                            },
+                        },
+                        }}
+                    />
+                    <button type="submit" disabled={!stripe}>
+                      Pay
+                    </button>
+            </form>
         </div>
     );
 };
