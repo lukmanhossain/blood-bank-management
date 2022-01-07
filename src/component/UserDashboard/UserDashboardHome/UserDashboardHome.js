@@ -11,13 +11,13 @@ const UserDashboardHome = () => {
     fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/donateBlood`)
       .then((res) => res.json())
       .then((data) => setDonations(data));
-  }, [donations]);
+  }, []);
 
   useEffect(() => {
     fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/bloodRequest`)
       .then((res) => res.json())
       .then((data) => setrequests(data));
-  }, [requests]);
+  }, []);
 
   const donationsPending = donations.filter(
     (donate) => donate.status === "Pending"
@@ -46,7 +46,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border card-plate-d">
               <p className="donor-icon">
-                <i className="fas fa-paper-plane text-primary"></i>
+                <i className="fas fa-paper-plane text-secondary"></i>
               </p>
               <p className="total total-text">Request Made</p>
               <p className="count count-text">{donations.length}</p>
@@ -55,7 +55,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border card-plate-d">
               <p className="donor-icon">
-                <i className="fas fa-hourglass-half text-warning"></i>
+                <i className="fas fa-hourglass-half text-secondary"></i>
               </p>
               <p className="total">Panding Request</p>
               <p className="count">{donationsPending.length}</p>
@@ -88,7 +88,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border card-plate-r">
               <p className="donor-icon">
-                <i className="fas fa-paper-plane text-primary"></i>
+                <i className="fas fa-paper-plane text-secondary"></i>
               </p>
               <p className="total">Request Made</p>
               <p className="count">{requests.length}</p>
@@ -97,7 +97,7 @@ const UserDashboardHome = () => {
           <div className="col">
             <div className="p-3 border card-plate-r">
               <p className="donor-icon">
-                <i className="fas fa-hourglass-half text-warning"></i>
+                <i className="fas fa-hourglass-half text-secondary"></i>
               </p>
               <p className="total">Panding Request</p>
               <p className="count">{requestsPending.length}</p>
