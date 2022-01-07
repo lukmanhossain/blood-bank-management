@@ -1,18 +1,3 @@
-.money-donation{
-    background-image: linear-gradient( 
-89deg, #d57f9a,#e16faa,#e46bb4);
-    border-radius: 9px;
-    font-family: ui-monospace;
-}
-
-.total-withdrow{
-    background-image: linear-gradient( 
-        63deg, #01fb4e70,#11e97b9e,#fbff01f2);
-            border-radius: 9px;
-            height: 105px;
-            font-family: ui-monospace;
-            font-weight: bolder;
-}
 
 .cherts{
     background-color: #fe0c8c2e;

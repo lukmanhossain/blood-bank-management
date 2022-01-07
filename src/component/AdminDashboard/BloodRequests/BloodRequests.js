@@ -1,40 +1,126 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import './BloodRequests.css'
 
 const BloodRequests = () => {
+  const[bloodrequest,setBloodrequest]=useState([])
+  console.log(bloodrequest);
+
+  useEffect(()=>{
+    fetch('http://hidden-coast-99117.herokuapp.com/bloodRequest')
+    .then(res => res.json())
+    .then(data =>{
+      // const AproveRequestData =data.filter(data =>data.status ==="Approved")
+          setBloodrequest(data)
+
+      
+      
+    })
+  },[])
+  // update approved status
+  const  handleApproved = (id) => {
+    axios
+      .put(`https://hidden-coast-99117.herokuapp.com/bloodRequest/${id}`, {
+        status: "Approved",
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.data.matchedCount > 0) {
+          Swal.fire("Approved!", "Donar request has been Approved.", "success");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // // update rejected status
+  const  handleRejected = (id) => {
+    axios
+      .put(`https://hidden-coast-99117.herokuapp.com/bloodRequest/${id}`, {
+        status: "Rejected",
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.data.matchedCount > 0) {
+          Swal.fire("Rejected!", "Donar request has been Rejected.", "success");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  if (!bloodrequest?.length) {
+    return (
+      <button class="btn btn-primary spner-btn" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    );
+  }
+
+
     return (
         <div>
             <div>
             <h4 className='donor-details mt-3'>Blood Requests</h4>
             <div className='pt-3'>
-            <Table striped bordered hover>
-      <thead >
-    <tr className='t-head'>
-      <th>Sl</th>
-      <th>Name</th>
-      <th>Profile</th>
-      <th>Blood Group</th>
-      <th>Age</th>
-      <th>Discase</th>
-      <th>Mobile</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>ali hossain</td>
-      <td>picture </td>
-      <td>A+</td>
-      <td>24</td>
-      <td>cencer</td>
-      <td>01923261111</td>
-      <td><button className='action-btn'>Delet</button></td>
-    </tr>
-   
-  </tbody>
-</Table>
+            <Table striped brequestblooded hover>
+          <thead>
+            <tr className="t-head">
+              <th>Sl</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Blood Group</th>
+              <th>Address</th>
+              <th>Reason</th>
+              <th>Doctor Name</th>
+              <th>Mobile</th>
+              <th>Date</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bloodrequest?.map((requestblood, index) => (
+              <tr>
+                <td>{index + 1}</td>
+                <td>{requestblood?.name}</td>
+                <td>{requestblood?.age}</td>
+                <td>{requestblood?.gender}</td>
+                <td>{requestblood?.bloodGroup}</td>
+                <td>{requestblood?.address}</td>
+                <td>{requestblood?.reason}</td>
+                <td>{requestblood?.doctorName}</td>
+                <td>{requestblood?.mobile}</td>
+                <td>{requestblood?.requestDate}</td>
+                <td>{requestblood?.quantity}</td>
+                <td>{requestblood?.status}</td>
+                <td>
+                  <button
+                    className="approbe-btn"
+                    onClick={() => handleApproved(requestblood._id)}
+                  >
+                    Approve
+                  </button>
+                  {/* <button
+                    className="approbe-btn"
+                    onClick={() => handleRejected(requestblood._id)}
+                  >
+                    Rejected
+                  </button> */}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
             </div>
 
         </div>

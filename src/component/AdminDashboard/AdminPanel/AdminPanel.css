@@ -37,7 +37,7 @@
 }
 .dashbord-list {
   background-color: #353a40;
-  height: 584px;
+  /* height: 584px; */
   padding-top: 17px;
 }
 
@@ -57,4 +57,17 @@
 
 .link-style {
   text-decoration: none;
+}
+.noti{
+  margin-right: 26px;
+    
+}
+.gonta{
+  font-size: 29px;
+  color: #0990ef;
+}
+
+.noti-btn{
+  background-color: #da4545;
+    border: none;
 }
