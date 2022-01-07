@@ -9,7 +9,7 @@ const BloodStocks = () => {
     const[bloodStock,setBloodStock]=useState([])
 
     const[stocks,setStocks]=useState([])
-    console.log(stocks);
+
   
     useEffect(()=>{
       fetch('http://hidden-coast-99117.herokuapp.com/bloodRequest')

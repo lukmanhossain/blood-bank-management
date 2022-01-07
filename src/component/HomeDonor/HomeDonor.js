@@ -21,7 +21,6 @@ const HomeDonor = () => {
         .then(res => res.json())
         .then(Donordata => {
           const AproveDonorData =Donordata.filter(data =>data.status ==="Approved")
-          console.log("hello",AproveDonorData)
           setUidonor(AproveDonorData)
           setDonor(AproveDonorData)
           
@@ -67,8 +66,11 @@ const HomeDonor = () => {
           </form>
           </div>
 
-
-           <div className='row mx-3 mb-5'>
+          {!uidonor.length && <div >
+            <h4 className='no-fund'>Opps ? No Donor Found</h4>
+         
+          </div>}
+          <div className='row mx-3 mb-5'>
            {
             uidonor.map(donordata => <HomeDonorData
             donordata={donordata}
@@ -76,7 +78,10 @@ const HomeDonor = () => {
             
             ></HomeDonorData>)   
            }
-           </div>
+          </div>
+
+
+           
         </div>
     );
 };
