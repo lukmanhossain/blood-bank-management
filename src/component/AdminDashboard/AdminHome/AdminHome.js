@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Charts from '../Charts/Charts';
-import ChartsData from '../ChartsData/ChartsData';
+
 import './AdminHome.css'
 
 const AdminHome = () => {
@@ -52,7 +52,7 @@ const[rejected,setBloodRejected]=useState([])
 
   return (
     <div>
-   <ChartsData></ChartsData>
+      <Charts></Charts>
     <div className=" ">
       <h3 className=" mb-3 mt-3 subro">Total Donor Data</h3>
       <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4">
