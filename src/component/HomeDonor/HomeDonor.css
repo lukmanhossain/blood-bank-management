@@ -60,14 +60,15 @@
 }
 
 .searce-btn{
-    padding: 1px 27px;
+    padding: 5px 21px;
     margin-left: 16px;
-    background-color: #f90c0ced;
+    background-color: #dc3545;
     border: 1px solid gray;
     border-radius: 5px;
-    font-family: initial;
     letter-spacing: 3px;
     color: #ffffff;
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .searce-btn:hover{
@@ -94,9 +95,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100Vh;
+    height: 60Vh;
     color: red;
     font-family: fangsong;
     font-weight: 900;
     font-size: 32px;
+}
+
+.select-options{
+    height: 36px;
+    padding: 4px;
+    color: red;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.request-blood{
+    
 }
