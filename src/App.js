@@ -12,6 +12,7 @@ import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
 import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import Payment from "./component/DashBoard/Payment/Payment";
 // import DashBoard from "./component/DashBoard/DashBoard/DashBoard";
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             {/* <Route path="/dashboard">
               <DashBoard />
             </Route> */}
+            <Route path="/payment">
+              <Payment />
+            </Route>
             <Route path="/admindashboard">
               <AdminPanel />
             </Route>
