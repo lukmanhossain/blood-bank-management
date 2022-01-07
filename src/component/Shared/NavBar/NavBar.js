@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
 const NavBar = () => {
-  const { user, logOut } = useAuth();
+  const { user, admin, logOut } = useAuth();
+  console.log(admin);
 
   const [click, setClick] = useState(false);
 
@@ -57,31 +58,32 @@ const NavBar = () => {
             </NavLink>
           </li>
 
-          { user?.email && user?.role !=="admin" && 
-            <li className="nav-item">
-            <NavLink
-              to="/userdashboard"
-              activeClassName="active"
-              className="nav-links"
-              onClick={handleClick}
-              className="menu-name"
-            >
-              UserDashboard
-            </NavLink>
-          </li>}
-
-        {user?.email && user?.role === "admin" && 
-          <li className="nav-item">
-            <NavLink
-              to="/admindashboard"
-              activeClassName="active"
-              className="nav-links"
-              onClick={handleClick}
-              className="menu-name"
-            >
-              AdminDashboard
-            </NavLink>
-          </li>
+          {
+             admin === true ? 
+              <li className="nav-item">
+                <NavLink
+                  to="/admindashboard"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                  className="menu-name"
+                >
+                  AdminDashboard
+                </NavLink>
+              </li>
+              :
+               user?.email && 
+                <li className="nav-item">
+                <NavLink
+                  to="/userdashboard"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                  className="menu-name"
+                >
+                  UserDashboard
+                </NavLink>
+              </li>
           }
 
           <li className="nav-item">
