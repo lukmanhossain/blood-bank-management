@@ -11,25 +11,26 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
 
 const AdminPanel = () => {
-    const {logOut} = useAuth();
+    
 
     let { path, url } = useRouteMatch();
     return (    
-        <div className=''>
+        <div className='m-0'>
             {/* Admin panel Heding start */}
             <div className=' head-line'>
               <h4 className='blood-heading'> <i class="fab fa-gratipay love"></i> Admin Dashboard</h4> 
-
-              <button type="button" class="btn position-relative ">
-              <i class="fas fa-bell"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <div className='noti'>
+              <button type="button" class=" position-relative noti-btn">
+              <i class="fas fa-bell gonta"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
                     99+
                     <span class="visually-hidden">unread messages</span>
                 </span>
                 </button>
+              </div>
 
-
-              <button onClick={logOut} className='log-out-btn'>Logout <i class="fas fa-sign-out-alt"></i></button>
+             
+             
             </div>
           {/* Admin panel Heding end */}
                 <div className='row dashbord-fild '>

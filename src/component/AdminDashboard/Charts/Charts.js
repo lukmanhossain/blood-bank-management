@@ -1,103 +1,57 @@
 
 import React, { useEffect, useState } from 'react';
-import './Charts.css'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip} from 'recharts';
-
+import './Charts.css';
 
 
 
 const Charts = () => {
+  const   [apositive,setApositive]=useState([]);
+    const [bpositive,setBpositive]=useState([]);
+    const [opositive,setOpositive]=useState([]);
+    const [abpositive,setAbpositive]=useState([]);
 
-  const [donorB,setDonorB]=useState([]);
-  const [donorAB,setDonorAB]=useState([]);
-  const [a,setB]=useState([]);
-  const [o,setO]=useState([]);
-  /// positive data //
-  const [onegative,setOnegative]=useState([]);
-  const [anegative,setAnegative]=useState([]);
-  const [abnegative,setABnegative]=useState([]);
-  const [bnegative,setBnegative]=useState([]);
+    const [anegative,setAnegative]=useState([]);
+    const [bnegative,setBnegative]=useState([]);
+    const [onegative,setOnegative]=useState([]);
+    const [abnegative,setAbnegative]=useState([]);
 
-  useEffect(()=>{
-    fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
-    .then(res => res.json())
-    .then(data =>
-        {
-           // positive blood group filter start//
-            const singlebloodgroup=data.filter(d =>d.bloodGroup ==="B+")
-            setDonorB(singlebloodgroup);
-            const singlebloodgroupab=data.filter(d =>d.bloodGroup ==="AB+")
-            setDonorAB(singlebloodgroupab);
-            const a=data.filter(d =>d.bloodGroup ==="A+")
-            setB(a);
-            const o=data.filter(d =>d.bloodGroup ==="O+")
-            setO(o);
-            // positive blood group filter end//
+    //////load data//
+    useEffect(()=>{
+        fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
+        .then(res => res.json())
+        .then(approve =>
+            {
+              const data =approve.filter(data =>data?.status ==="Approved");
 
-            const aa=data.filter(d =>d.bloodGroup ==="O-")
-            setOnegative(aa);
-            const bb=data.filter(d =>d.bloodGroup ==="A-")
-            setAnegative(bb);
-            const cc=data.filter(d =>d.bloodGroup ==="AB-")
-            setABnegative(cc);
-            const dd=data.filter(d =>d.bloodGroup ==="B-")
-            setBnegative(dd);
+               const aPositive=data.filter(d =>d?.bloodGroup ==="A+")
+               setApositive(aPositive);
+                const singlebloodgroup=data.filter(d =>d?.bloodGroup ==="B+")
+                setBpositive(singlebloodgroup);
+                const oposi =data.filter(d =>d?.bloodGroup ==="O+")
+                setOpositive(oposi);
+                const abposi=data.filter(d =>d.bloodGroup ==="AB+")
+                setAbpositive(abposi);
 
-            
-        })
-},[]);
+                const Anegative=data.filter(d =>d?.bloodGroup ==="A-")
+                setAnegative(Anegative);
 
-    const data = [{name: 'Blood Group', Total: 0, pv: 2400, amt: 2400},
-    {name: 'A+', Total:`${a.length}`, pv: 2400, amt: 2400},
-    {name: 'B+', Total:`${donorB.length}`, pv: 2400, amt: 2400},
-    {name: 'O+', Total:`${o.length}`, pv: 2400, amt: 2400},
-    {name: 'AB+', Total:`${donorAB.length}`, pv: 2400, amt: 2400},
+                const Bnegative=data.filter(d =>d?.bloodGroup ==="B-")
+                setBnegative(Bnegative);
 
+                const Onegativea=data.filter(d =>d?.bloodGroup ==="O-")
+                setOnegative(Onegativea);
 
-    {name: 'A-', Total: `${anegative.length}`, pv: 2400, amt: 2400},
-    {name: 'B-', Total:`${bnegative.length}`, pv: 2400, amt: 2400},
-    {name: 'O-', Total: `${onegative.length}`, pv: 2400, amt: 2400},
-    {name: 'AB-', Total: `${abnegative.length}`, pv: 2400, amt: 2400},
+                const Abnegative= data.filter(d =>d?.bloodGroup ==="AB-")
+                setAbnegative(Abnegative);
+            })
+    },[]);
+    ////load data///
 
-];
 
 
     return (
-        <div class=" overflow-hidden mb-3">
-        <div class="row gy-5">
-          <div class="col-4">
-            <div class="p-3 border money-donation">
-                <h6>Total Donation</h6>
-                <h2>$2022</h2>
-
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-3 border money-donation">
-            <h6>Total Withdrow </h6>
-                <h2>$2018</h2>
-
-            </div>
-          </div>
-          <div class="col-4">
-          <div class="p-3 border money-donation">
-            <h6>Total Patients </h6>
-                <h2><i class="fas fa-user-injured"></i> 20</h2>
-
-            </div>
-          </div>
-          
-        </div>
-
-        <div className='mt-3'>
-        <LineChart width={780} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }} className='cherts'>
-        <Line type="monotone" dataKey="Total" stroke="red" />
-        <CartesianGrid  strokeDasharray="5 5" />
-          <XAxis dataKey="name" />
-         <YAxis />
-         <Tooltip />
-        </LineChart>
-        </div>
+        <div>
+       
       </div>
      
     );
