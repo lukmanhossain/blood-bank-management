@@ -20,8 +20,8 @@ const AdminPanel = () => {
               <h4 className='blood-heading'> <i class="fab fa-gratipay love"></i> Admin Dashboard</h4> 
               <div className='noti'>
               <button type="button" class=" position-relative noti-btn">
-              <i class="fas fa-bell gonta"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+              <i class="fas fa-bell gonta mt-2"></i>
+                <span class="position-absolute top-0 mt-2 start-100 translate-middle badge rounded-pill bg-dark">
                     99+
                     <span class="visually-hidden">unread messages</span>
                 </span>

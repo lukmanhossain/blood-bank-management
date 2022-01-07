@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminPanel from "./component/AdminDashboard/AdminPanel/AdminPanel";
 import ContactUs from "./component/ContactUs/ContactUs";
-import MakeAdmin from "./component/AdminDashboard/MakeAdmin/MakeAdmin";
 import HomeDonor from "./component/HomeDonor/HomeDonor";
 import HomeMain from "./component/HomeMain/HomeMain/HomeMain";
 import Login from "./component/Login/Login/Login";
@@ -12,10 +11,10 @@ import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
 import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
-import Payment from "./component/DashBoard/Payment/Payment";
+// import Payment from "./component/DashBoard/Payment/Payment";
 import PrivateRoute from "./component/Login/PrivateRoute/PrivateRoute";
 import AdminRoute from "./component/Login/AdminRoute/AdminRoute";
-// import DashBoard from "./component/DashBoard/DashBoard/DashBoard";
+import UserBloodRequest from "./component/UserDashboard/UserBloodRequest/UserBloodRequest";
 
 function App() {
   return (
@@ -30,36 +29,33 @@ function App() {
             <Route path="/home">
               <HomeMain />
             </Route>
-            {/* <Route path="/dashboard">
-              <DashBoard />
-            </Route> */}
-            <Route path="/payment">
+            {/* <Route path="/payment">
               <Payment />
-            </Route>
-            <AdminRoute path="/admindashboard">
-              <AdminPanel />
-            </AdminRoute>
+            </Route> */}
             <Route path="/donor">
-              <HomeDonor></HomeDonor>
+              <HomeDonor/>
             </Route>
-            <PrivateRoute path="/be-a-donar">
-              <UserDonateBlood/>
-            </PrivateRoute>
-            <PrivateRoute path="/userdashboard">
-              <UserDashboard></UserDashboard>
-            </PrivateRoute>
+            <Route path="/user-blood-request">
+              <UserBloodRequest/>
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/makeAdmin">
-              <MakeAdmin />
-            </Route>
             <Route path="/contact-us">
               <ContactUs />
             </Route>
+            <AdminRoute path="/admindashboard">
+              <AdminPanel />
+            </AdminRoute>
+            <PrivateRoute path="/be-a-donar">
+              <UserDonateBlood/>
+            </PrivateRoute>
+            <PrivateRoute path="/userdashboard">
+              <UserDashboard/>
+            </PrivateRoute>
             <Route path="*">
               <NotFound/>
             </Route>
