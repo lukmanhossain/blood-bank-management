@@ -27,6 +27,12 @@
   max-width: 1400px;
 }
 
+#item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-logo {
   align-items: center;
   margin-left: 50px;
@@ -51,11 +57,11 @@
   border-bottom: 3px solid transparent;
 }
 .fa-code {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .nav-item {
-  line-height: 35px;
+  line-height: 60px;
   margin-right: 1rem;
 }
 .menu-name {
@@ -79,7 +85,7 @@
 }
 
 .nav-item .active {
-  font-weight: 700;
+  font-weight: 800;
   color: rgb(226, 65, 65);
 }
 
@@ -120,7 +126,7 @@
     z-index: 1;
   }
   .nav-item .active {
-    color: white;
+    color: rgb(243, 78, 78);
     border: none;
   }
   .nav-links {
@@ -138,5 +144,12 @@
     font-size: 1.8rem;
     cursor: pointer;
     color: rgb(243, 78, 78);
+    /* margin-bottom: 30px; */
+  }
+  .nav-logo {
+    margin-top: 7px;
+  }
+  .nav-name {
+    margin-top: 8px;
   }
 }

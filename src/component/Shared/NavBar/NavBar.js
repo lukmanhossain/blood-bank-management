@@ -14,14 +14,14 @@ const NavBar = () => {
   const handleClick = () => setClick(!click);
   return (
     <nav className="navbar">
-      <div className="nav-container ">
-        <NavLink exact to="/" className="nav-logo text-left d-flex">
+      <div className="nav-container">
+        <NavLink exact to="/" className=" pb-2 nav-logo text-left d-flex">
         <img className="me-3 rounded-circle" src={gif} alt="" width="58" height="52" />
             <div className="nav-name">
             Blood-Bank
             </div>
         </NavLink>
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <ul id="item-container" className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <NavLink
               exact
@@ -95,9 +95,9 @@ const NavBar = () => {
               Contact Us
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className="nav-item ">
           {user.email ? (
-                <Nav.Link>
+                <Nav.Link >
                   <button className="btn btn-danger" onClick={logOut}>
                     LOGOUT
                   </button>

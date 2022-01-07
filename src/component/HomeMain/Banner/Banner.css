@@ -1,22 +1,16 @@
-.intro{
-    
-    display: flex;
-    background-color: #ffffff;
-            
+.intro {
+  display: flex;
+  background-color: #ffffff;
 }
 
-.intro-item{
-    width: 100%;
-    padding-left: 7%;
-     
+.intro-item {
+  width: 100%;
+  padding-left: 7%;
 }
 
 /* -------Intro Section Image------- */
-.intro-item img{
-    width: 90%;
-    height: 80%;
-    border-radius: 15px;
-    
+.intro-item img {
+  width: 90%;
+  height: 80%;
+  border-radius: 15px;
 }
-
-
