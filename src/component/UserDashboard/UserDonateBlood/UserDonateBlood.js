@@ -19,14 +19,14 @@ const UserDonateBlood = () => {
     console.log(data);
     data.status = `Pending`;
     data.email = user.email;
-    // if (donars.map((donar) => donar.email === user.email)) {
-    //   return Swal.fire({
-    //     position: "center",
-    //     icon: "error",
-    //     title: "You are already registered as a donar",
-    //     showConfirmButton: true,
-    //   });
-    // }
+    if (donars.map((donar) => donar.email === user.email)) {
+      return Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "You are already registered as a donar",
+        showConfirmButton: true,
+      });
+    }
     axios
       .post("https://hidden-coast-99117.herokuapp.com/donateBlood", data)
       .then((res) => {
