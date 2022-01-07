@@ -14,9 +14,8 @@ const UserDashboard = () => {
   return (
     <div className=" ">
       {/* User Dashboard Heding start */}
-      <div className=" head-line">
+      <div className="head-line">
         <p className="blood-heading">
-          {" "}
           <i class="fab fa-gratipay love"></i>User Dashboard
         </p>
         <button onClick={logOut} className="log-out-btn">
