@@ -23,7 +23,7 @@ const Footer = () => {
                             <li><Link to="/#">contact</Link></li>
                             <li><Link to="/#">query</Link></li>
                             <li><Link to="/#">availablity</Link></li>
-                            <li><Link to="/#">payment options</Link></li>
+
                         </ul>
                     </div>
                     <div class="footer-col">
