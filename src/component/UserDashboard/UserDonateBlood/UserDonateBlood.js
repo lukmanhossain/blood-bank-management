@@ -53,10 +53,11 @@ const UserDonateBlood = () => {
             defaultValue={user.displayName}
             {...register("name", { required: true, maxLength: 20 })}
           />
-
           <input
-            placeholder="Your Age (18+ Only)"
+            placeholder="Your Age (18-60 only)"
             type="number"
+            min="18"
+            max="60"
             {...register("age", { min: 18, required: true })}
           />
           <select {...register("gender", { required: true })}>
@@ -94,7 +95,7 @@ const UserDonateBlood = () => {
             placeholder="Disease (if any, oterwise type 'no')"
             {...register("disease", { required: true })}
           />
-          <label>Last donate date:</label>
+          <label> &nbsp; Last donate date:</label>
           <input
             type="date"
             placeholder="Last donate date"

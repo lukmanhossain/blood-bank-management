@@ -36,7 +36,12 @@ const UserBloodRequest = () => {
             {...register("name", { required: true, maxLength: 20 })}
           />
 
-          <input placeholder="Patient Age" type="number" {...register("age")} />
+          <input
+            placeholder="Patient Age"
+            type="number"
+            min="0"
+            {...register("age")}
+          />
 
           <select {...register("gender", { required: true })}>
             <option value="" disabled selected hidden>
@@ -76,6 +81,7 @@ const UserBloodRequest = () => {
           <input
             placeholder="Quantity (Bags)"
             type="number"
+            min="1"
             {...register("quantity")}
           />
           <input
