@@ -19,9 +19,12 @@ const HomeDonor = () => {
     useEffect(()=>{ 
         fetch('http://hidden-coast-99117.herokuapp.com/donateBlood')
         .then(res => res.json())
-        .then(data => {
-          setDonor(data);
-          setUidonor(data);
+        .then(Donordata => {
+          const AproveDonorData =Donordata.filter(data =>data.status ==="Approved")
+          console.log("hello",AproveDonorData)
+          setUidonor(AproveDonorData)
+          setDonor(AproveDonorData)
+          
         })
       },[])
       

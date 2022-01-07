@@ -5,7 +5,8 @@ import useAuth from "../../../hooks/useAuth";
 import gif from '../../../images/blood-donate.gif'
 
 const NavBar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut,admin } = useAuth();
+  console.log(admin)
 
   const [click, setClick] = useState(false);
 
@@ -54,7 +55,7 @@ const NavBar = () => {
               Be A Donor
             </NavLink>
           </li>
-          <li className="nav-item">
+         {user?.email &&  <li className="nav-item">
             <NavLink
               to="/userdashboard"
               activeClassName="active"
@@ -64,8 +65,9 @@ const NavBar = () => {
             >
               UserDashboard
             </NavLink>
-          </li>
-          <li className="nav-item">
+          </li>}
+
+       <li className="nav-item">
             <NavLink
               to="/adminpanel"
               activeClassName="active"
@@ -76,6 +78,7 @@ const NavBar = () => {
               AdminDashboard
             </NavLink>
           </li>
+
           <li className="nav-item">
             <NavLink
               to="/contact-us"

@@ -5,7 +5,6 @@ import BloodStocks from '../BloodStocks/BloodStocks';
 import Donation from '../Donation/Donation';
 import Donor from '../../Donor/Donor';
 import Home from '../AdminHome/AdminHome';
-import Patient from '../Patient/Patient';
 import RequestHistory from '../RequestHistory/RequestHistory';
 import './AdminPanel.css'
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -19,7 +18,17 @@ const AdminPanel = () => {
         <div className=''>
             {/* Admin panel Heding start */}
             <div className=' head-line'>
-              <h4 className='blood-heading'> <i class="fab fa-gratipay love"></i> Admin Dashboard</h4>  
+              <h4 className='blood-heading'> <i class="fab fa-gratipay love"></i> Admin Dashboard</h4> 
+
+              <button type="button" class="btn position-relative ">
+              <i class="fas fa-bell"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+                </button>
+
+
               <button onClick={logOut} className='log-out-btn'>Logout <i class="fas fa-sign-out-alt"></i></button>
             </div>
           {/* Admin panel Heding end */}
@@ -32,9 +41,7 @@ const AdminPanel = () => {
                             <Link className='link-style' to={`${url}/donor`}>
                                 <li className='list-item'><i class="fas fa-user-alt list-icon"></i>Donor</li>
                             </Link>
-                            <Link className='link-style' to={`${url}/patient`}>
-                                <li className='list-item'><i class="fas fa-user-injured list-icon"></i>Patient</li>
-                            </Link>
+
                             <Link className='link-style' to={`${url}/donation`}>
                                 <li className='list-item'><i class="fas fa-hand-holding-usd list-icon"></i>Donation</li>
                             </Link>
@@ -62,9 +69,6 @@ const AdminPanel = () => {
                             </Route>
                             <Route exact path={`${path}/donor`}> 
                            <Donor></Donor>
-                            </Route>
-                            <Route exact path={`${path}/patient`}> 
-                           <Patient></Patient>
                             </Route>
                             <Route exact path={`${path}/donation`}> 
                            <Donation></Donation>

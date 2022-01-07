@@ -12,6 +12,7 @@ import NavBar from "./component/Shared/NavBar/NavBar";
 import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard";
 import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import DonationBank from "./component/DonationBank/DonationBank";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/be-a-donar">
               <UserDonateBlood/>
+            </Route>
+            <Route path="/donationBank">
+              <DonationBank></DonationBank>
             </Route>
             <Route path="/login">
               <Login />
