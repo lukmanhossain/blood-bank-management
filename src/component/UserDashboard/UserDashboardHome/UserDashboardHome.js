@@ -40,11 +40,11 @@ const UserDashboardHome = () => {
   );
   return (
     <Container>
-      <div>
-        <h4 className="mt-3 mb-3">Blood Donation Dashboard</h4>
+      <div className="">
+        <h4 className="mt-3 mb-3">Blood Donations Record</h4>
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-4">
           <div className="col">
-            <div className="p-3 border bg-light card-plate">
+            <div className="p-3 border card-plate-d">
               <p className="donor-icon">
                 <i className="fas fa-paper-plane text-primary"></i>
               </p>
@@ -53,7 +53,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-d">
               <p className="donor-icon">
                 <i className="fas fa-hourglass-half text-warning"></i>
               </p>
@@ -62,7 +62,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-d">
               <p className="donor-icon">
                 <i className="far fa-check-circle text-success"></i>
               </p>
@@ -71,7 +71,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-d">
               <p className="donor-icon">
                 <i className="fas fa-times-circle text-danger"></i>
               </p>
@@ -81,12 +81,12 @@ const UserDashboardHome = () => {
           </div>
         </div>
       </div>
-      <hr className="my-5 " />
-      <div className="blood-request-dashboard">
-        <h4 className="m3-5 mb-3">Blood Request Dashboard</h4>
+      <hr className="mt-5 " />
+      <div className="blood-request-dashboard mb-5">
+        <h4 className=" mb-3">Blood Requests Record</h4>
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-4">
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-r">
               <p className="donor-icon">
                 <i className="fas fa-paper-plane text-primary"></i>
               </p>
@@ -95,7 +95,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-r">
               <p className="donor-icon">
                 <i className="fas fa-hourglass-half text-warning"></i>
               </p>
@@ -104,7 +104,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-r">
               <p className="donor-icon">
                 <i className="far fa-check-circle text-success"></i>
               </p>
@@ -113,7 +113,7 @@ const UserDashboardHome = () => {
             </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">
+            <div className="p-3 border card-plate-r">
               <p className="donor-icon">
                 <i className="fas fa-times-circle text-danger"></i>
               </p>

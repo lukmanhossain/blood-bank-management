@@ -46,7 +46,7 @@ const UserDonateBlood = () => {
     <div className="donate-blood-form-container ">
       <h2 className="m-3">Donate Blood Save Life !</h2>
       <div className="donate-blood-form">
-        <h5 className="mb-5">Please give your details to donate blood</h5>
+        {/* <h5 className="mb-5">Please give your details to donate blood</h5> */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             placeholder="Your Name"
@@ -94,14 +94,14 @@ const UserDonateBlood = () => {
             placeholder="Disease (if any, oterwise type 'no')"
             {...register("disease", { required: true })}
           />
-          <label>Last blood donate date:</label>
+          <label>Last donate date:</label>
           <input
             type="date"
             placeholder="Last donate date"
             {...register("lastDonateDate", { required: true, maxLength: 20 })}
           />
 
-          <button className="btn btn-danger mt-5" type="submit">
+          <button className="btn btn-danger mt-4" type="submit">
             Donate Blood <i className="fas fa-tint"></i>
           </button>
         </form>

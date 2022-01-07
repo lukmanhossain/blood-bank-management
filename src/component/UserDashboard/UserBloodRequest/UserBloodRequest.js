@@ -30,9 +30,6 @@ const UserBloodRequest = () => {
     <div className="request-blood-form-container ">
       <h2 className="m-3">Make a blood request</h2>
       <div className="request-blood-form">
-        <h5 className="mb-5">
-          Please give patient's details to blood request{" "}
-        </h5>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             placeholder="Patient Name"
@@ -40,23 +37,37 @@ const UserBloodRequest = () => {
           />
 
           <input placeholder="Patient Age" type="number" {...register("age")} />
+
+          <select {...register("gender", { required: true })}>
+            <option value="" disabled selected hidden>
+              Gender
+            </option>
+            <option defaultValue="male">Male</option>
+            <option defaultValue="female">Female</option>
+            <option defaultValue="other">Other</option>
+          </select>
+
           <select {...register("bloodGroup")}>
             <option defaultValue="" disabled selected hidden>
               Blood Group
             </option>
-            <option value="female">A+</option>
-            <option value="other">B+</option>
-            <option value="female">O+</option>
-            <option value="other">AB+</option>
-            <option value="male">A-</option>
-            <option value="female">B-</option>
-            <option value="male">O-</option>
-            <option value="other">AB-</option>
+            <option defaultValue="a+">A+</option>
+            <option defaultValue="b+">B+</option>
+            <option defaultValue="o+">O+</option>
+            <option defaultValue="ab+">AB+</option>
+            <option defaultValue="a-">A-</option>
+            <option defaultValue="b-">B-</option>
+            <option defaultValue="o-">O-</option>
+            <option defaultValue="ab-">AB-</option>
           </select>
 
           <input
             placeholder="Address"
             {...register("address", { required: true })}
+          />
+          <input
+            placeholder="Mobile Number"
+            {...register("mobile", { required: true })}
           />
           <input
             placeholder="Reason"
@@ -78,7 +89,7 @@ const UserBloodRequest = () => {
             {...register("requestDate", { required: true, maxLength: 20 })}
           />
 
-          <button className="btn btn-danger mt-5" type="submit">
+          <button className="btn btn-danger mt-4" type="submit">
             Send Request <i class="fas fa-paper-plane"></i>
           </button>
         </form>
