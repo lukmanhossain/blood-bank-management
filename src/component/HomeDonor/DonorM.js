@@ -6,7 +6,7 @@ const DonorM = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { name, gender, address, bloodGroup, _id, age, mobile } = props.donar;
+  const { name, gender, address, bloodGroup, age, mobile,lastDonateDate } = props.donar;
 
   return (
     <>
@@ -23,6 +23,7 @@ const DonorM = (props) => {
         <h6>Blood Group: {bloodGroup}</h6>
         <h6>Address: {address}</h6>
         <h6>Mobile: {mobile}</h6>
+        <h6>The latest blood donation : {lastDonateDate}</h6>
         </Modal.Body>
         
 

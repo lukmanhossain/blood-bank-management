@@ -60,12 +60,18 @@
 .searce-btn{
     padding: 1px 27px;
     margin-left: 16px;
-    background-color: #cd5e5e;
+    background-color: #f90c0ced;
     border: 1px solid gray;
     border-radius: 5px;
     font-family: initial;
     letter-spacing: 3px;
     color: #ffffff;
+}
+
+.searce-btn:hover{
+    background-color: blueviolet;
+    color: black;
+
 }
 
 .select-option{
