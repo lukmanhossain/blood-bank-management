@@ -3,8 +3,8 @@ import { Card } from 'react-bootstrap';
 import './Testimonials.css'
 
 const Testimonial = ({ testimonial }) => {
-    const { name, address, description, img } = testimonial;
-    console.log("testimonial" + testimonial);
+    const { name, description, img } = testimonial;
+
     return (
 
 

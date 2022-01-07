@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom';
 const Banner = () => {
     return (
         // Banner Section
-        <div className='row mx-5 my-5'>
-            <div className="col-lg-6 col-sm-12 p-5">
+        <div className='row mx-5 mt-3'>
+            <div className="col-lg-6 col-sm-12 mt-5 ">
                 <h1> <span className='text-success'>Donate Blood</span> <br />
                     <span className='text-danger'> Save Life</span>
                 </h1>
@@ -17,8 +17,8 @@ const Banner = () => {
                     <button type="button" class="btn btn-outline-danger mt-2">Find Donor</button>
                 </NavLink>
             </div>
-            <div className="col-lg-6 col-sm-12">
-                <img className='img-fluid' src={banner2} alt="" />
+            <div className="col-lg-6 col-sm-12 ">
+                <img className='img-fluid mt-3' src={banner2} alt="" />
             </div>
         </div>
     );
