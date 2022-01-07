@@ -6,7 +6,7 @@ import './BloodRequests.css'
 
 const BloodRequests = () => {
   const[bloodrequest,setBloodrequest]=useState([])
-  console.log(bloodrequest);
+  
 
   useEffect(()=>{
     fetch('http://hidden-coast-99117.herokuapp.com/bloodRequest')
@@ -110,12 +110,12 @@ const BloodRequests = () => {
                   >
                     Approve
                   </button>
-                  {/* <button
+                  <button
                     className="approbe-btn"
                     onClick={() => handleRejected(requestblood._id)}
                   >
                     Rejected
-                  </button> */}
+                  </button>
                 </td>
               </tr>
             ))}

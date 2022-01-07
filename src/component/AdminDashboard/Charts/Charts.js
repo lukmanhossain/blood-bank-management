@@ -50,9 +50,84 @@ const Charts = () => {
 
 
     return (
-        <div>
-       
+    
+      <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4">
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">A+</p>
+          <p className="count"> Total Donor :{apositive.length}</p>
+        </div>
       </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">B+</p>
+          <p className="count"> Total Donor :{bpositive.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">O+</p>
+          <p className="count"> Total Donor :{opositive.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">AB+</p>
+          <p className="count"> Total Donor :{abpositive.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">A-</p>
+          <p className="count"> Total Donor :{anegative.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">B-</p>
+          <p className="count"> Total Donor :{bnegative.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">O-</p>
+          <p className="count"> Total Donor :{onegative.length}</p>
+        </div>
+      </div>
+      <div className="col">
+        <div className="p-1 border Stock-donor">
+          <p className="blood-icon">
+          <i class="fas fa-burn"></i>
+          </p>
+          <p className="blood">AB-</p>
+          <p className="count"> Total Donor :{abnegative.length}</p>
+        </div>
+      </div>
+      </div>
+      
+       
+     
      
     );
 };
