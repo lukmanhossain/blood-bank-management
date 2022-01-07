@@ -56,7 +56,9 @@ const NavBar = () => {
               Be A Donor
             </NavLink>
           </li>
-          <li className="nav-item">
+
+          { user?.email && user?.role !=="admin" && 
+            <li className="nav-item">
             <NavLink
               to="/userdashboard"
               activeClassName="active"
@@ -66,7 +68,9 @@ const NavBar = () => {
             >
               UserDashboard
             </NavLink>
-          </li>
+          </li>}
+
+        {user?.email && user?.role === "admin" && 
           <li className="nav-item">
             <NavLink
               to="/admindashboard"
@@ -78,6 +82,8 @@ const NavBar = () => {
               AdminDashboard
             </NavLink>
           </li>
+          }
+
           <li className="nav-item">
             <NavLink
               to="/contact-us"
@@ -92,13 +98,13 @@ const NavBar = () => {
           <li className="nav-item">
           {user.email ? (
                 <Nav.Link>
-                  <button className="btn btn-warning" onClick={logOut}>
+                  <button className="btn btn-danger" onClick={logOut}>
                     LOGOUT
                   </button>
                 </Nav.Link>
               ) : (
                 <Nav.Link as={Link} to="/login">
-                  <button className="btn btn-warning">LOGIN</button>
+                  <button className="btn btn-danger">LOGIN</button>
                 </Nav.Link>
               )}
           </li>
