@@ -1,6 +1,6 @@
 # Save Life Blood Bank
 
-![Project Image](https://i.ibb.co/k11BWGp/Capture.png)
+![Project Image](https://i.ibb.co/1zWLFhc/2.png)
 
 ## This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.
 
