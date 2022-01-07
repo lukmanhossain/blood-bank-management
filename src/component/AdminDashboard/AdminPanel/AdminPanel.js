@@ -2,13 +2,12 @@ import React from 'react';
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import BloodRequests from '../BloodRequests/BloodRequests';
 import BloodStocks from '../BloodStocks/BloodStocks';
-import Donation from '../Donation/Donation';
 import Donor from '../../Donor/Donor';
 import Home from '../AdminHome/AdminHome';
 import RequestHistory from '../RequestHistory/RequestHistory';
 import './AdminPanel.css'
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import useAuth from '../../../hooks/useAuth';
+
 
 const AdminPanel = () => {
     
@@ -42,10 +41,6 @@ const AdminPanel = () => {
                             <Link className='link-style' to={`${url}/donor`}>
                                 <li className='list-item'><i class="fas fa-user-alt list-icon"></i>Donor</li>
                             </Link>
-
-                            <Link className='link-style' to={`${url}/donation`}>
-                                <li className='list-item'><i class="fas fa-hand-holding-usd list-icon"></i>Donation</li>
-                            </Link>
                             <Link className='link-style' to={`${url}/bloodRequests`}>
                                 <li className='list-item'><i class="fas fa-sync-alt  list-icon"></i>Blood Requests</li>
                             </Link>
@@ -70,9 +65,6 @@ const AdminPanel = () => {
                             </Route>
                             <Route exact path={`${path}/donor`}> 
                            <Donor></Donor>
-                            </Route>
-                            <Route exact path={`${path}/donation`}> 
-                           <Donation></Donation>
                             </Route>
                             <Route exact path={`${path}/bloodRequests`}> 
                             <BloodRequests></BloodRequests>

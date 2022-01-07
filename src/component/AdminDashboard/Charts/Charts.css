@@ -1,7 +1,17 @@
 
-.cherts{
-    background-color: #fe0c8c2e;
-    border-radius: 6px;
-    font-family: none;
-    font-weight: bolder;
+.blood-icon{
+    color: red;
+    text-align: end;
+    font-size: 26px;
+}
+.blood{
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 700;
+    color: red;
+    font-family: emoji;
+}
+
+.Stock-donor{
+    border-radius: 9px
 }

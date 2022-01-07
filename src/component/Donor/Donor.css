@@ -39,5 +39,6 @@ td{
     margin: 2px;
     padding: 3px;
     border-radius: 8px;
-    background-color: cadetblue;
+    background-color: #ffad04;
+    color: currentcolor;
 }
