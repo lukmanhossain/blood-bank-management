@@ -58,16 +58,15 @@
 .link-style {
   text-decoration: none;
 }
-.noti{
+.noti {
   margin-right: 26px;
-    
 }
-.gonta{
+.gonta {
   font-size: 29px;
-  color: #0990ef;
+  color: #070b0e;
 }
 
-.noti-btn{
+.noti-btn {
   background-color: #da4545;
-    border: none;
+  border: none;
 }

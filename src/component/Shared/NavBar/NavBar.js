@@ -8,7 +8,6 @@ import { Nav } from "react-bootstrap";
 
 const NavBar = () => {
   const { user, admin, logOut } = useAuth();
-  console.log(admin);
 
   const [click, setClick] = useState(false);
 
@@ -68,7 +67,7 @@ const NavBar = () => {
                   onClick={handleClick}
                   className="menu-name"
                 >
-                  AdminDashboard
+                  Dashboard
                 </NavLink>
               </li>
               :
@@ -81,7 +80,7 @@ const NavBar = () => {
                   onClick={handleClick}
                   className="menu-name"
                 >
-                  UserDashboard
+                  Dashboard
                 </NavLink>
               </li>
           }
@@ -94,7 +93,7 @@ const NavBar = () => {
               onClick={handleClick}
               className="menu-name"
             >
-              Contact Us
+              Contact
             </NavLink>
           </li>
           <li className="nav-item ">
