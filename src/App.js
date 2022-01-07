@@ -13,6 +13,8 @@ import UserDashboard from "./component/UserDashboard/UserDashboard/UserDashboard
 import UserDonateBlood from "./component/UserDashboard/UserDonateBlood/UserDonateBlood";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Payment from "./component/DashBoard/Payment/Payment";
+import PrivateRoute from "./component/Login/PrivateRoute/PrivateRoute";
+import AdminRoute from "./component/Login/AdminRoute/AdminRoute";
 // import DashBoard from "./component/DashBoard/DashBoard/DashBoard";
 
 function App() {
@@ -34,18 +36,18 @@ function App() {
             <Route path="/payment">
               <Payment />
             </Route>
-            <Route path="/admindashboard">
+            <AdminRoute path="/admindashboard">
               <AdminPanel />
-            </Route>
-            <Route path="/userdashboard">
-              <UserDashboard></UserDashboard>
-            </Route>
+            </AdminRoute>
             <Route path="/donor">
               <HomeDonor></HomeDonor>
             </Route>
-            <Route path="/be-a-donar">
+            <PrivateRoute path="/be-a-donar">
               <UserDonateBlood/>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/userdashboard">
+              <UserDashboard></UserDashboard>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
