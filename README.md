@@ -4,13 +4,13 @@
 
 ## This website is a platform for blood seekers & donars, where one can easily choose their desired blood groups from nearby locations.
 
-## Live Site Link: ![Live Site] (https://blood-bank-1d1c3.web.app/)
+## Live Site : [Link](https://blood-bank-1d1c3.web.app/)
 
 ## Key Features:
 
 ### User:
 
-- One can register himself/herself as a Donor by providing required     informations
+- One can register himself/herself as a Donor by providing required informations
 
 - One can search for his/her desired blood group in preffered location
 
@@ -28,11 +28,7 @@
 
 - From Donation section, one can donate money using SSL commerz & Stripe
 
-
-
-
-
-### Admin: 
+### Admin:
 
 - From admin dashboard admin can approve a donor by checking all the informations
 
@@ -40,7 +36,7 @@
 
 - Admin can see the total list of donors with all the informations
 
-- From Donation section, Admin can see the donated amount and donor also  
+- From Donation section, Admin can see the donated amount and donor also
 
 - Admin can control blood request by accepting or rejecting the requests
 
@@ -65,6 +61,5 @@
     <!--  -->
     <a href="https://expressjs.com" target="_blank"> <img src="https://expressjs.com/images/express-facebook-share.png" alt="express" width="40" height="40"/> </a>
 </p>
-
 
 ## Happy Donating 🩸

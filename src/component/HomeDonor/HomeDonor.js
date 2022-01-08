@@ -31,7 +31,7 @@ const HomeDonor = () => {
 
   if (!donors.length) {
     return (
-      <button class="btn btn-primary spner-btn" type="button" disabled>
+      <button class="btn btn-primary spner-btn mb-5" type="button" disabled>
         <span
           class="spinner-border spinner-border-sm"
           role="status"
@@ -46,7 +46,9 @@ const HomeDonor = () => {
     <div>
       <div className="Searce-Fild">
         <form onSubmit={handleSubmit(onSubmit)} className="search-option">
-          <h3 className="Donor-src">Donor Search</h3>
+          <h3 className="Donor-src">
+            Donor Search <i className="fas fa-arrow-right"></i>
+          </h3>
           <div className="select-option">
             <small className="smaill-css">Blood Group</small>
             <select {...register("bloodGroup")} className="mb-3 select-options">
@@ -63,16 +65,24 @@ const HomeDonor = () => {
           </div>
         </form>
       </div>
-      <NavLink
-        style={{ textDecoration: "none", color: "red" }}
-        to="/user-blood-request"
-      >
-        <Button color="inherit"> Make Blood Request</Button>
-      </NavLink>
-
+      <div className="m-5 make-req">
+        <h5>
+          If you did't find a donar, please send blood request to the blood
+          bank.
+        </h5>
+        <NavLink
+          style={{ textDecoration: "none", color: "red" }}
+          to="/user-blood-request"
+        >
+          <button className="btn btn-danger" color="inherit">
+            {" "}
+            Blood Request
+          </button>
+        </NavLink>
+      </div>
       {!uidonor.length && (
         <div>
-          <h4 className="no-fund">Opps ? No Donor Found</h4>
+          <h4 className="no-fund">Opps ! No Donor Found</h4>
         </div>
       )}
       <div className="row mx-3 mb-5">

@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import BloodRequests from "../BloodRequests/BloodRequests";
-import BloodStocks from "../BloodStocks/BloodStocks";
 import Donor from "../../Donor/Donor";
 import Home from "../AdminHome/AdminHome";
 import RequestHistory from "../RequestHistory/RequestHistory";
@@ -17,14 +16,14 @@ const AdminPanel = () => {
       <div className=" head-line">
         <h4 className="blood-heading">
           {" "}
-          <i class="fab fa-gratipay love"></i> Admin Dashboard
+          <i className="fab fa-gratipay love"></i> Admin Dashboard
         </h4>
         <div className="noti">
-          <button type="button" class=" position-relative noti-btn">
-            <i class="fas fa-bell gonta mt-2"></i>
-            <span class="position-absolute top-0 mt-2 start-100 translate-middle badge rounded-pill bg-dark">
+          <button type="button" className=" position-relative noti-btn">
+            <i className="fas fa-bell gonta mt-2"></i>
+            <span className="position-absolute top-0 mt-2 start-100 translate-middle badge rounded-pill bg-dark">
               99+
-              <span class="visually-hidden">unread messages</span>
+              <span className="visually-hidden">unread messages</span>
             </span>
           </button>
         </div>
@@ -35,38 +34,32 @@ const AdminPanel = () => {
           <div>
             <Link className="link-style" to={`${url}`}>
               <li className="list-item">
-                <i class="fas fa-home list-icon"></i>Home
+                <i className="fas fa-home list-icon"></i>Home
               </li>
             </Link>
             <Link className="link-style" to={`${url}/donor`}>
               <li className="list-item">
-                <i class="fas fa-user-alt list-icon"></i>Donor
+                <i className="fas fa-user-alt list-icon"></i>Donor
               </li>
             </Link>
             <Link className="link-style" to={`${url}/donationRequests`}>
               <li className="list-item">
-                <i class="fas fa-user-alt list-icon"></i>Blood Donation
+                <i className="fas fa-user-alt list-icon"></i>Blood Donation
               </li>
             </Link>
             <Link className="link-style" to={`${url}/bloodRequests`}>
               <li className="list-item">
-                <i class="fas fa-sync-alt  list-icon"></i>Blood Requests
+                <i className="fas fa-sync-alt  list-icon"></i>Blood Requests
               </li>
             </Link>
             <Link className="link-style" to={`${url}/requestHistory`}>
               <li className="list-item">
-                <i class="fas fa-history list-icon"></i>Request History
-              </li>
-            </Link>
-            <Link className="link-style" to={`${url}/bloodStocks`}>
-              <li className="list-item">
-                <i class="fas fa-hand-holding-medical list-icon"></i>Blood
-                Stocks
+                <i className="fas fa-history list-icon"></i>Request History
               </li>
             </Link>
             <Link className="link-style" to={`${url}/make-admin`}>
               <li className="list-item">
-                <i class="fas fa-hand-holding-medical list-icon"></i>Make Admin
+                <i className="fas fa-users-cog list-icon"></i>Make Admin
               </li>
             </Link>
           </div>
@@ -88,9 +81,6 @@ const AdminPanel = () => {
             </Route>
             <Route exact path={`${path}/requestHistory`}>
               <RequestHistory></RequestHistory>
-            </Route>
-            <Route exact path={`${path}/bloodStocks`}>
-              <BloodStocks></BloodStocks>
             </Route>
             <Route exact path={`${path}/make-admin`}>
               <MakeAdmin></MakeAdmin>
