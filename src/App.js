@@ -33,11 +33,9 @@ function App() {
               <Payment />
             </Route> */}
             <Route path="/donor">
-              <HomeDonor/>
+              <HomeDonor />
             </Route>
-            <Route path="/user-blood-request">
-              <UserBloodRequest/>
-            </Route>
+
             <Route path="/login">
               <Login />
             </Route>
@@ -51,13 +49,16 @@ function App() {
               <AdminPanel />
             </AdminRoute>
             <PrivateRoute path="/be-a-donar">
-              <UserDonateBlood/>
+              <UserDonateBlood />
             </PrivateRoute>
             <PrivateRoute path="/userdashboard">
-              <UserDashboard/>
+              <UserDashboard />
+            </PrivateRoute>
+            <PrivateRoute path="/user-blood-request">
+              <UserBloodRequest />
             </PrivateRoute>
             <Route path="*">
-              <NotFound/>
+              <NotFound />
             </Route>
           </Switch>
           <Footer />
