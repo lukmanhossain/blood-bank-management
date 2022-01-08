@@ -13,7 +13,7 @@ const DonationRequests = () => {
         // const AproveRequestData =data.filter(data =>data.status ==="Approved")
         setDonationRequest(data);
       });
-  }, []);
+  }, [donationRequest]);
   // update approved status
   const handleApproved = (id) => {
     axios
@@ -98,16 +98,16 @@ const DonationRequests = () => {
                   <td>{requestblood?.status}</td>
                   <td>
                     <button
-                      className="approbe-btn"
+                      className="btn btn-success btn-sm mx-1"
                       onClick={() => handleApproved(requestblood._id)}
                     >
                       Approve
                     </button>
                     <button
-                      className="approbe-btn"
+                      className="btn btn-danger btn-sm"
                       onClick={() => handleRejected(requestblood._id)}
                     >
-                      Rejected
+                      Reject
                     </button>
                   </td>
                 </tr>

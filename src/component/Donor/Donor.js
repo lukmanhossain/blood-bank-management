@@ -92,16 +92,16 @@ const Donor = () => {
                 <td>{donorslist?.status}</td>
                 <td>
                   <button
-                    className="approbe-btn"
+                    className="btn btn-sm btn-success mx-1"
                     onClick={() => handleApprovedStatus(donorslist._id)}
                   >
                     Approve
                   </button>
                   <button
-                    className="approbe-btn"
+                    className="btn btn-sm btn-danger"
                     onClick={() => handleRejectedStatus(donorslist._id)}
                   >
-                    Rejected
+                    Reject
                   </button>
                 </td>
               </tr>
