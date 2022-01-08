@@ -46,77 +46,101 @@ const Charts = () => {
   return (
     <div>
       <h2>Bloods in stock</h2>
-      <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4">
+      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-lg-4">
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">A+</p>
-            <p className="count"> Total Donor :{apositive.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;A+</span>
+              <p className="count">
+                In Stock : <span className="stock">{apositive.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">B+</p>
-            <p className="count"> Total Donor :{bpositive.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;B+</span>
+              <p className="count">
+                In Stock : <span className="stock">{bpositive.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">O+</p>
-            <p className="count"> Total Donor :{opositive.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;O+</span>
+              <p className="count">
+                In Stock : <span className="stock">{opositive.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">AB+</p>
-            <p className="count"> Total Donor :{abpositive.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;AB+</span>
+              <p className="count">
+                In Stock : <span className="stock">{abpositive.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">A-</p>
-            <p className="count"> Total Donor :{anegative.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;A-</span>
+              <p className="count">
+                In Stock : <span className="stock">{anegative.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">B-</p>
-            <p className="count"> Total Donor :{bnegative.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;B-</span>
+              <p className="count">
+                In Stock : <span className="stock">{bnegative.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">O-</p>
-            <p className="count"> Total Donor :{onegative.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;O-</span>
+              <p className="count">
+                In Stock : <span className="stock">{onegative.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
         <div className="col">
-          <div className="p-1 border Stock-donor">
-            <p className="blood-icon">
-              <i class="fas fa-burn"></i>
-            </p>
-            <p className="blood">AB-</p>
-            <p className="count"> Total Donor :{abnegative.length}</p>
+          <div className="col stock-card">
+            <div className="p-1">
+              <i class="fas fa-burn blood-icon"></i>
+              <span className="blood"> &nbsp;AB-</span>
+              <p className="count">
+                In Stock : <span className="stock">{abnegative.length} </span>
+                Bag(s)
+              </p>
+            </div>
           </div>
         </div>
       </div>
