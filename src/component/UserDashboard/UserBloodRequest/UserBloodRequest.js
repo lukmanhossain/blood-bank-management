@@ -88,7 +88,7 @@ const UserBloodRequest = () => {
             placeholder="Doctor's Name"
             {...register("doctorName", { required: false, maxLength: 20 })}
           />
-
+          <label> &nbsp; Last donate date:</label>
           <input
             type="date"
             placeholder="Donating Date"
