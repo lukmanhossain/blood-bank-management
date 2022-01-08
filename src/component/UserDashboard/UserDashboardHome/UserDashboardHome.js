@@ -8,7 +8,7 @@ const UserDashboardHome = () => {
   const [requests, setrequests] = useState([]);
 
   useEffect(() => {
-    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/donateBlood`)
+    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/bloods`)
       .then((res) => res.json())
       .then((data) => setDonations(data));
   }, []);

@@ -7,30 +7,24 @@ const UserDonationHistory = () => {
   const { user } = useAuth();
   const [donations, setDonations] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`https://hidden-coast-99117.herokuapp.com/donateBlood/${user.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setDonations(data));
-  // }, []);
-
   useEffect(() => {
-    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/donateBlood/`)
+    fetch(`https://hidden-coast-99117.herokuapp.com/${user.email}/bloods`)
       .then((res) => res.json())
       .then((data) => setDonations(data));
   }, []);
 
-  if (!donations.length) {
-    return (
-      <button class="btn btn-primary spner-btn" type="button" disabled>
-        <span
-          class="spinner-border spinner-border-sm"
-          role="status"
-          aria-hidden="true"
-        ></span>
-        Loading...
-      </button>
-    );
-  }
+  // if (!donations.length) {
+  //   return (
+  //     <button class="btn btn-primary spner-btn" type="button" disabled>
+  //       <span
+  //         class="spinner-border spinner-border-sm"
+  //         role="status"
+  //         aria-hidden="true"
+  //       ></span>
+  //       Loading...
+  //     </button>
+  //   );
+  // }
 
   return (
     <div className="donation-history-container">

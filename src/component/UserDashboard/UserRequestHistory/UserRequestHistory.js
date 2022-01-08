@@ -19,18 +19,18 @@ const UserRequestHistory = () => {
       .then((data) => setRequests(data));
   }, [requests]);
 
-  if (!requests.length) {
-    return (
-      <button class="btn btn-primary spner-btn" type="button" disabled>
-        <span
-          class="spinner-border spinner-border-sm"
-          role="status"
-          aria-hidden="true"
-        ></span>
-        Loading...
-      </button>
-    );
-  }
+  // if (!requests.length) {
+  //   return (
+  //     <button class="btn btn-primary spner-btn" type="button" disabled>
+  //       <span
+  //         class="spinner-border spinner-border-sm"
+  //         role="status"
+  //         aria-hidden="true"
+  //       ></span>
+  //       Loading...
+  //     </button>
+  //   );
+  // }
 
   return (
     <div className="request-history-container">
