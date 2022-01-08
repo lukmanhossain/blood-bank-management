@@ -45,9 +45,9 @@ const AdminHome = () => {
   }, []);
 
   return (
-    <div>
+    <div className="p-3">
       <Charts></Charts>
-      <div className=" ">
+      <div >
         <h3 className=" mb-3 mt-3 subro">Total Donor Data</h3>
         <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4">
           <div className="col">

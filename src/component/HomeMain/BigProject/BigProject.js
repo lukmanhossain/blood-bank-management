@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 import './BigProject.css'
+import hospital from '../../../images/hospital-building-modern-parking-lot-59693686.jpg'
 
 
 const BigProject = () => {
@@ -10,7 +11,7 @@ const BigProject = () => {
               <h1 className='big-project'>Our Big Project</h1>
             <div className='row'>
                 <div className='col-lg-6 col-sm-12 mb-5'>
-                <img src="https://thumbs.dreamstime.com/b/hospital-building-modern-parking-lot-59693686.jpg" class="img-fluid  image" alt="..."/>
+                <img src={hospital} class="img-fluid  image" alt="..."/>
 
                 </div>
                 <div className='col-lg-6 col-sm-12'>
