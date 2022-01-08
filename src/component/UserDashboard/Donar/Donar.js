@@ -95,11 +95,11 @@ const Donar = () => {
             placeholder="Disease (if any, oterwise type 'no')"
             {...register("disease", { required: true })}
           />
-          <label> &nbsp; Last donate date:</label>
+          <label> &nbsp; Donate date:</label>
           <input
             type="date"
             placeholder="Last donate date"
-            {...register("lastDonateDate", { required: true, maxLength: 20 })}
+            {...register("DonateDate", { required: true, maxLength: 20 })}
           />
 
           <button className="btn btn-danger mt-4" type="submit">

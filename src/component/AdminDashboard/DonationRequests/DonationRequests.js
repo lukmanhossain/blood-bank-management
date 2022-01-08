@@ -61,7 +61,7 @@ const DonationRequests = () => {
   return (
     <div>
       <div>
-        <h4 className="donor-details mt-3">Blood Requests</h4>
+        <h4 className="donor-details mt-3">Blood Donation</h4>
         <div className="pt-3">
           <Table striped brequestblooded hover>
             <thead>
@@ -72,11 +72,8 @@ const DonationRequests = () => {
                 <th>Gender</th>
                 <th>Blood Group</th>
                 <th>Address</th>
-                <th>Reason</th>
-                <th>Doctor Name</th>
                 <th>Mobile</th>
-                <th>Date</th>
-                <th>Quantity</th>
+                <th>Donate Date</th> 
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -90,11 +87,8 @@ const DonationRequests = () => {
                   <td>{requestblood?.gender}</td>
                   <td>{requestblood?.bloodGroup}</td>
                   <td>{requestblood?.address}</td>
-                  <td>{requestblood?.reason}</td>
-                  <td>{requestblood?.doctorName}</td>
                   <td>{requestblood?.mobile}</td>
-                  <td>{requestblood?.requestDate}</td>
-                  <td>{requestblood?.quantity}</td>
+                  <td>{requestblood?.DonateDate}</td>
                   <td>{requestblood?.status}</td>
                   <td>
                     <button

@@ -71,9 +71,10 @@ const Donor = () => {
               <th>Age</th>
               <th>Gender</th>
               <th>Blood Group</th>
+              <th>Disease(If Any)</th>
+              <th>Last Donate Date</th>
               <th>Address</th>
               <th>Mobile</th>
-              <th>Email</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -86,9 +87,10 @@ const Donor = () => {
                 <td>{donorslist?.age}</td>
                 <td>{donorslist?.gender}</td>
                 <td>{donorslist?.bloodGroup}</td>
+                <td>{donorslist?.disease}</td>
+                <td>{donorslist?.lastDonateDate}</td>
                 <td>{donorslist?.address}</td>
                 <td>{donorslist?.mobile}</td>
-                <td>{donorslist?.email}</td>
                 <td>{donorslist?.status}</td>
                 <td>
                   <button
