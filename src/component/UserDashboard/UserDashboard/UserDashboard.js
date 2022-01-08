@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import Donar from "../Donar/Donar";
 import UserBloodRequest from "../UserBloodRequest/UserBloodRequest";
 import UserDashboardHome from "../UserDashboardHome/UserDashboardHome";
 import UserDonateBlood from "../UserDonateBlood/UserDonateBlood";
@@ -62,7 +63,7 @@ const UserDashboard = () => {
               <UserDashboardHome></UserDashboardHome>
             </Route>
             <Route exact path={`${path}/donateBlood`}>
-              <UserDonateBlood></UserDonateBlood>
+              <Donar></Donar>
             </Route>
             <Route exact path={`${path}/donationHistory`}>
               <UserDonationHistory></UserDonationHistory>

@@ -1,17 +1,17 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./UserDonateBlood.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
-const UserDonateBlood = () => {
+
+const Donar = () => {
   const { user, logOut } = useAuth();
   const { register, handleSubmit, reset } = useForm();
-  const [donars, setDonars] = useState([]);
+  const [bloods, setBloods] = useState([]);
 
   useEffect(() => {
-    fetch("https://hidden-coast-99117.herokuapp.com/donateBlood").then((res) =>
-      res.json().then((data) => setDonars(data))
+    fetch("https://hidden-coast-99117.herokuapp.com/bloods").then((res) =>
+      res.json().then((data) => setBloods(data))
     );
   }, []);
 
@@ -19,16 +19,16 @@ const UserDonateBlood = () => {
     console.log(data);
     data.status = `Pending`;
     data.email = user.email;
-    if (donars.map((donar) => donar.email === user.email)) {
-      return Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "You are already registered as a donar",
-        showConfirmButton: true,
-      });
-    }
+    // if (donars.map((donar) => donar.email === user.email)) {
+    //   return Swal.fire({
+    //     position: "center",
+    //     icon: "error",
+    //     title: "You are already registered as a donar",
+    //     showConfirmButton: true,
+    //   });
+    // }
     axios
-      .post("https://hidden-coast-99117.herokuapp.com/donateBlood", data)
+      .post("https://hidden-coast-99117.herokuapp.com/bloods", data)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -44,7 +44,7 @@ const UserDonateBlood = () => {
   };
   return (
     <div className="donate-blood-form-container ">
-      <h2 className="m-3">Be a Donar !</h2>
+      <h2 className="m-3">Donate Blood Save Life !</h2>
       <div className="donate-blood-form">
         {/* <h5 className="mb-5">Please give your details to donate blood</h5> */}
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -103,7 +103,7 @@ const UserDonateBlood = () => {
           />
 
           <button className="btn btn-danger mt-4" type="submit">
-            Submit <i className="fas fa-tint"></i>
+            Donate Blood <i className="fas fa-tint"></i>
           </button>
         </form>
       </div>
@@ -111,4 +111,4 @@ const UserDonateBlood = () => {
   );
 };
 
-export default UserDonateBlood;
+export default Donar;
