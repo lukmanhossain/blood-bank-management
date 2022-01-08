@@ -100,16 +100,16 @@ const BloodRequests = () => {
                   <td>{requestblood?.status}</td>
                   <td>
                     <button
-                      className="approbe-btn"
+                      className="btn btn-sm btn-success mx-1"
                       onClick={() => handleApproved(requestblood._id)}
                     >
                       Approve
                     </button>
                     <button
-                      className="approbe-btn"
+                      className="btn btn-sm btn-danger"
                       onClick={() => handleRejected(requestblood._id)}
                     >
-                      Rejected
+                      Reject
                     </button>
                   </td>
                 </tr>

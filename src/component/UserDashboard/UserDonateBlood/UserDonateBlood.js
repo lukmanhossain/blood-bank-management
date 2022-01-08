@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./UserDonateBlood.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import useAuth from "../../../hooks/useAuth";
 const UserDonateBlood = () => {
   const { user, logOut } = useAuth();
@@ -19,7 +19,7 @@ const UserDonateBlood = () => {
     console.log(data);
     data.status = `Pending`;
     data.email = user.email;
-    if (donars.map((donar) => donar.email === user.email)) {
+    if (donars.find((donar) => donar.email === data.email)) {
       return Swal.fire({
         position: "center",
         icon: "error",
@@ -44,7 +44,10 @@ const UserDonateBlood = () => {
   };
   return (
     <div className="donate-blood-form-container ">
-      <h2 className="m-3">Be a Donar !</h2>
+      <h2 className="m-3">Be a Donar ! </h2>
+      <h5 className="pb-3">
+        "There is a hope of life to someone in your blood donation"
+      </h5>
       <div className="donate-blood-form">
         {/* <h5 className="mb-5">Please give your details to donate blood</h5> */}
         <form onSubmit={handleSubmit(onSubmit)}>
