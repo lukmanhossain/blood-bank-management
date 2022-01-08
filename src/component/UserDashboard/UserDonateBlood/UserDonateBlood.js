@@ -16,10 +16,15 @@ const UserDonateBlood = () => {
   }, []);
 
   const onSubmit = (data) => {
-    console.log(data);
     data.status = `Pending`;
     data.email = user.email;
-    if (donars.find((donar) => donar.email === data.email)) {
+    if (
+      donars.find(
+        (donar) =>
+          donar.email === data.email &&
+          (data.status === "Pending" || "Approved" || "Rejected")
+      )
+    ) {
       return Swal.fire({
         position: "center",
         icon: "error",
