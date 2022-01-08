@@ -8,7 +8,7 @@ const Donor = () => {
   const [donorslist, setDonorslist] = useState([]);
 
   useEffect(() => {
-    fetch("http://hidden-coast-99117.herokuapp.com/donateBlood")
+    fetch("https://hidden-coast-99117.herokuapp.com/donateBlood")
       .then((res) => res.json())
       .then((data) => setDonorslist(data));
   }, [donorslist]);

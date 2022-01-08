@@ -1,26 +1,22 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
-import Swal from 'sweetalert2';
-import './BloodRequests.css'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
+import Swal from "sweetalert2";
+import "./BloodRequests.css";
 
 const BloodRequests = () => {
-  const[bloodrequest,setBloodrequest]=useState([])
-  
+  const [bloodrequest, setBloodrequest] = useState([]);
 
-  useEffect(()=>{
-    fetch('http://hidden-coast-99117.herokuapp.com/bloodRequest')
-    .then(res => res.json())
-    .then(data =>{
-      // const AproveRequestData =data.filter(data =>data.status ==="Approved")
-          setBloodrequest(data)
-
-      
-      
-    })
-  },[])
+  useEffect(() => {
+    fetch("https://hidden-coast-99117.herokuapp.com/bloodRequest")
+      .then((res) => res.json())
+      .then((data) => {
+        // const AproveRequestData =data.filter(data =>data.status ==="Approved")
+        setBloodrequest(data);
+      });
+  }, []);
   // update approved status
-  const  handleApproved = (id) => {
+  const handleApproved = (id) => {
     axios
       .put(`https://hidden-coast-99117.herokuapp.com/bloodRequest/${id}`, {
         status: "Approved",
@@ -36,7 +32,7 @@ const BloodRequests = () => {
       });
   };
   // // update rejected status
-  const  handleRejected = (id) => {
+  const handleRejected = (id) => {
     axios
       .put(`https://hidden-coast-99117.herokuapp.com/bloodRequest/${id}`, {
         status: "Rejected",
@@ -64,68 +60,66 @@ const BloodRequests = () => {
     );
   }
 
-
-    return (
-        <div>
-            <div>
-            <h4 className='donor-details mt-3'>Blood Requests</h4>
-            <div className='pt-3'>
-            <Table striped brequestblooded hover>
-          <thead>
-            <tr className="t-head">
-              <th>Sl</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Gender</th>
-              <th>Blood Group</th>
-              <th>Address</th>
-              <th>Reason</th>
-              <th>Doctor Name</th>
-              <th>Mobile</th>
-              <th>Date</th>
-              <th>Quantity</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bloodrequest?.map((requestblood, index) => (
-              <tr>
-                <td>{index + 1}</td>
-                <td>{requestblood?.name}</td>
-                <td>{requestblood?.age}</td>
-                <td>{requestblood?.gender}</td>
-                <td>{requestblood?.bloodGroup}</td>
-                <td>{requestblood?.address}</td>
-                <td>{requestblood?.reason}</td>
-                <td>{requestblood?.doctorName}</td>
-                <td>{requestblood?.mobile}</td>
-                <td>{requestblood?.requestDate}</td>
-                <td>{requestblood?.quantity}</td>
-                <td>{requestblood?.status}</td>
-                <td>
-                  <button
-                    className="approbe-btn"
-                    onClick={() => handleApproved(requestblood._id)}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    className="approbe-btn"
-                    onClick={() => handleRejected(requestblood._id)}
-                  >
-                    Rejected
-                  </button>
-                </td>
+  return (
+    <div>
+      <div>
+        <h4 className="donor-details mt-3">Blood Requests</h4>
+        <div className="pt-3">
+          <Table striped brequestblooded hover>
+            <thead>
+              <tr className="t-head">
+                <th>Sl</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Address</th>
+                <th>Reason</th>
+                <th>Doctor Name</th>
+                <th>Mobile</th>
+                <th>Date</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
-            </div>
-
+            </thead>
+            <tbody>
+              {bloodrequest?.map((requestblood, index) => (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{requestblood?.name}</td>
+                  <td>{requestblood?.age}</td>
+                  <td>{requestblood?.gender}</td>
+                  <td>{requestblood?.bloodGroup}</td>
+                  <td>{requestblood?.address}</td>
+                  <td>{requestblood?.reason}</td>
+                  <td>{requestblood?.doctorName}</td>
+                  <td>{requestblood?.mobile}</td>
+                  <td>{requestblood?.requestDate}</td>
+                  <td>{requestblood?.quantity}</td>
+                  <td>{requestblood?.status}</td>
+                  <td>
+                    <button
+                      className="approbe-btn"
+                      onClick={() => handleApproved(requestblood._id)}
+                    >
+                      Approve
+                    </button>
+                    <button
+                      className="approbe-btn"
+                      onClick={() => handleRejected(requestblood._id)}
+                    >
+                      Rejected
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default BloodRequests;
