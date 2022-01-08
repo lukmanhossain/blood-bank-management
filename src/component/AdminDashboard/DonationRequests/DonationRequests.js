@@ -7,7 +7,7 @@ const DonationRequests = () => {
   const [donationRequest, setDonationRequest] = useState([]);
 
   useEffect(() => {
-    fetch("http://hidden-coast-99117.herokuapp.com/bloods")
+    fetch("https://hidden-coast-99117.herokuapp.com/bloods")
       .then((res) => res.json())
       .then((data) => {
         // const AproveRequestData =data.filter(data =>data.status ==="Approved")
@@ -46,18 +46,18 @@ const DonationRequests = () => {
         console.log(err);
       });
   };
-  // if (!bloodrequest?.length) {
-  //   return (
-  //     <button class="btn btn-primary spner-btn" type="button" disabled>
-  //       <span
-  //         class="spinner-border spinner-border-sm"
-  //         role="status"
-  //         aria-hidden="true"
-  //       ></span>
-  //       Loading...
-  //     </button>
-  //   );
-  // }
+  if (!donationRequest?.length) {
+    return (
+      <button class="btn btn-primary spner-btn" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    );
+  }
   return (
     <div>
       <div>
