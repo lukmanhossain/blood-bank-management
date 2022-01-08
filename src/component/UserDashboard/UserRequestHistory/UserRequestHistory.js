@@ -21,9 +21,9 @@ const UserRequestHistory = () => {
 
   // if (!requests.length) {
   //   return (
-  //     <button class="btn btn-primary spner-btn" type="button" disabled>
+  //     <button className="btn btn-primary spner-btn" type="button" disabled>
   //       <span
-  //         class="spinner-border spinner-border-sm"
+  //         className="spinner-border spinner-border-sm"
   //         role="status"
   //         aria-hidden="true"
   //       ></span>
